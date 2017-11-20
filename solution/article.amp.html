@@ -18,20 +18,23 @@
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="canonical" href="/article.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <link rel="shortcut icon" href="amp_favicon.png">
 
-    <title>News Article</title>
+    <link rel="canonical" href="/article.html">
+    <link rel="shortcut icon" href="icons/amp_favicon.png">
 
+    <title>News</title>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
       body {
         width: auto;
         margin: 0;
         padding: 0;
+        font-family: 'Raleway', sans-serif;
       }
       header {
-        background: Tomato;
+        background: #1e88e5;
         color: white;
         font-size: 2em;
         text-align: center;
@@ -40,27 +43,138 @@
         margin: 0;
         padding: 0.5em;
         background: white;
-        box-shadow: 0px 3px 5px grey;
       }
       p {
         padding: 0.5em;
         margin: 0.5em;
       }
+      amp-fit-text {
+        text-align: center;
+      }
+      .home-button {
+        float: left;
+      }
+      .sub-menu {
+        background: black;
+      }
+      .sub-menu a {
+        border-radius: 3px;
+        display: block;
+        background: #6ab7ff;
+        margin: 5px;
+        padding: 5px;
+        color: white;
+        text-decoration: none;
+      }
     </style>
-
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script type="application/ld+json">
+    {
+     "@context": "http://schema.org",
+     "@type": "NewsArticle",
+     "mainEntityOfPage":{
+       "@type":"WebPage",
+       "@id":"https://example.com/my-article.html"
+     },
+     "headline": "My First AMP Article",
+     "image": {
+       "@type": "ImageObject",
+       "url": "https://example.com/article_thumbnail1.jpg",
+       "height": 800,
+       "width": 800
+     },
+     "datePublished": "2015-02-05T08:00:00+08:00",
+     "dateModified": "2015-02-05T09:20:00+08:00",
+     "author": {
+       "@type": "Person",
+       "name": "John Doe"
+     },
+     "publisher": {
+       "@type": "Organization",
+       "name": "⚡ AMP Times",
+       "logo": {
+         "@type": "ImageObject",
+         "url": "https://example.com/amptimes_logo.jpg",
+         "width": 600,
+         "height": 60
+       }
+     },
+     "description": "My first experience in an AMPlified world"
+    }
+    </script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
   </head>
   <body>
     <header>
+      <a href="homepage.html">
+        <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+      </a>
       News Site
     </header>
+    <div class="sub-menu">
+      <amp-carousel layout="fixed-height" height="38" type="carousel">
+        <a href="#example1">Example 1</a>
+        <a href="#example2">Example 2</a>
+        <a href="#example3">Longer Named Example 3</a>
+        <a href="#example4">Example 4</a>
+      </amp-carousel>
+    </div>
     <article>
       <h1>Article Name</h1>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
-
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img src="images/city.jpg" layout="responsive" width="640" height="426"></amp-img>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu. ipsum lacinia iaculis. Donec tellus libero, tincidunt ac urna vel, iaculis tincidunt turpis. Morbi dictum pulvinar placerat. Vestibulum mattis dignissim nibh in sodales. Curabitur libero ligula, fringilla non molestie eget, maximus vitae nunc. Proin at accumsan ante.
+      </p>
+      <amp-carousel layout="fixed-height" height="168" type="carousel" >
+        <amp-img src="images/metro.jpg" width="300" height="168"></amp-img>
+        <amp-img src="images/analytics.jpg" width="300" height="168"></amp-img>
+        <amp-img src="images/entrepreneur.jpg" width="300" height="168"></amp-img>
+      </amp-carousel>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu neque eu dolor mollis convallis. Nunc eu orci euismod augue condimentum bibendum.
+      </p>
+      <amp-carousel layout="responsive" width="300" height="168" type="slides" autoplay delay="2000" loop>
+        <amp-img src="images/metro.jpg" width="300" height="168" layout="responsive"></amp-img>
+        <amp-img src="images/analytics.jpg" width="300" height="168" layout="responsive"></amp-img>
+        <amp-img src="images/entrepreneur.jpg" width="300" height="168" layout="responsive"></amp-img>
+      </amp-carousel>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu neque eu dolor mollis convallis. Nunc eu orci euismod augue condimentum bibendum.
+      </p>
+      <p>
+        Etiam sit amet consectetur nibh. Aliquam varius lorem nisl, a accumsan dui commodo eget. Nunc finibus, ipsum lobortis fringilla maximus, diam dolor egestas enim, sed consequat ante tellus sed lectus.
+      </p>
+      <amp-twitter
+        width="486"
+        height="657"
+        layout="responsive"
+        data-tweetid="638793490521001985">
+      </amp-twitter>
+      <p>
+        Etiam sit amet consectetur nibh. Aliquam varius lorem nisl, a accumsan dui commodo eget. Nunc finibus, ipsum lobortis fringilla maximus, diam dolor egestas enim, sed consequat ante tellus sed lectus.
+      </p>
+      <amp-fit-text width="400" height="165" layout="responsive" max-font-size="30">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor
+      </amp-fit-text>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.
+      </p>
+      <amp-youtube
+        data-videoid="mGENRKrdoGY"
+        layout="responsive"
+        width="480"
+        height="270">
+        <div fallback>
+          <p>The video could not be loaded.</p>
+        </div>
+      </amp-youtube>
+      <p>
+        Etiam sit amet consectetur nibh. Aliquam varius lorem nisl, a accumsan dui commodo eget. Nunc finibus, ipsum lobortis fringilla maximus, diam dolor egestas enim, sed consequat ante tellus sed lectus.
+      </p>
     </article>
   </body>
 </html>
