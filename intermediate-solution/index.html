@@ -169,8 +169,7 @@
       <form method="post"
         class="flex-column p2"
         action-xhr="/submit-form"
-        target="_top"
-        on="submit-success:form-success-lightbox">
+        target="_top">
         <div class="flex justify-center">
           <div class="ampstart-input inline-block relative m0 p0 mb3">
             <input type="text" id="form-name" class="block border-none p0 m0"
@@ -204,12 +203,16 @@
         </div>
       </form>
 
-      <amp-lightbox id="form-success-lightbox" layout="nodisplay">
+      <div class="flex justify-center my3">
+        <button class="ampstart-btn caps" on="tap:button-lightbox">Try amp-lighbox!</button>
+      </div>
+
+      <amp-lightbox id="button-lightbox" layout="nodisplay">
         <div class="lightbox"
-          on="tap:form-success-lightbox.close"
+          on="tap:button-lightbox.close"
           role="button"
           tabindex="0">
-          <h1>Thanks for subscribing!</h1>
+          <h1>amp-lightbox!</h1>
         </div>
       </amp-lightbox>
     </main>
