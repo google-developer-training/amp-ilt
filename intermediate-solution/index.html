@@ -41,56 +41,22 @@
 
     <style amp-custom>
       body {
-        margin: 0;
-        background: #fff;
-        color: #4a4a4a;
-        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+        font-family: sans-serif;
         min-width: 315px;
-        overflow-x: hidden;
-        font-smooth: always;
-        -webkit-font-smoothing: antialiased;
         line-height: 1.5rem;
-        letter-spacing: normal;
-      }
-
-      header {
-        display: block;
-      }
-
-      .ampstart-nav-dropdown amp-accordion header {
-        background-color: #fff;
-        border: none
-      }
-
-      .ampstart-nav-dropdown .ampstart-dropdown-item,.ampstart-nav-dropdown .ampstart-dropdown>section>header {
-        background-color: #fff;
-        color: #000
-      }
-
-      .ampstart-sidebar .ampstart-dropdown-item,.ampstart-sidebar .ampstart-dropdown header,.ampstart-sidebar .ampstart-faq-item,.ampstart-sidebar .ampstart-nav-item,.ampstart-sidebar .ampstart-social-follow {
-        margin: 0 0 2rem
       }
 
       .ampstart-headerbar {
         background-color: #fff;
-        color: #000;
         z-index: 999;
         box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
         position: fixed;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
         top: 0;
         left: 0;
         right: 0;
         padding-left: 1rem;
-        padding-right: 2rem;
       }
 
       .ampstart-headerbar+:not(amp-sidebar),.ampstart-headerbar+amp-sidebar+* {
@@ -114,17 +80,12 @@
         line-height: 2rem
       }
 
-      article,aside,footer,header,nav,section {
-        display: block
-      }
-
-      .ampstart-nav-dropdown amp-accordion ul {
-        background-color: #fff
+      .ampstart-sidebar .ampstart-dropdown-item,.ampstart-sidebar .ampstart-dropdown header,.ampstart-sidebar .ampstart-nav-item {
+        margin: 0 0 2rem
       }
 
       .ampstart-sidebar {
         background-color: #fff;
-        color: #000;
         min-width: 300px;
         width: 300px;
         padding-left: 1.5rem;
@@ -133,7 +94,6 @@
 
       .ampstart-navbar-trigger {
         cursor: pointer;
-        text-decoration: none;
         line-height: 3.5rem;
         font-size: 2rem;
         padding-right: 1rem
@@ -141,13 +101,6 @@
 
       .ampstart-navbar-trigger:focus {
         outline: none
-      }
-
-      .ampstart-sidebar .ampstart-navbar-trigger {
-        line-height: inherit;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: flex-start
       }
 
       @media (max-width:40rem) {
@@ -162,71 +115,23 @@
         }
       }
 
-      .ampstart-navbar-trigger svg {
-        pointer-events: none
-      }
-
-      .sidebar-button {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        line-height: 3.5rem;
-        min-height: 3.5rem
-      }
-
       .ampstart-nav a {
-        cursor: pointer;
-        text-decoration: none
+        text-decoration: none;
+        color:#000;
       }
 
       .ampstart-label {
         list-style: none;
-        padding-left: 0;
-        margin: 0;
         padding: 0;
         font-size: .875rem;
-        color: #4f4f4f;
         line-height: 1.125rem;
         letter-spacing: .06rem;
         text-transform: uppercase
       }
 
-      .ampstart-nav .ampstart-label {
-        color: inherit
-      }
-
-      .ampstart-nav-item:active,.ampstart-nav-item:focus,.ampstart-nav-item:hover {
-        opacity: 1
-      }
-
-      .ampstart-nav-dropdown {
-        min-width: 200px;
-        margin: 0;
-        position: relative;
-      }
-
-      .ampstart-nav-dropdown amp-accordion header {
+      .ampstart-nav-dropdown .ampstart-dropdown>section>header {
         background-color: #fff;
-        border: none
-      }
-
-      .ampstart-nav-dropdown amp-accordion ul {
-        background-color: #fff
-      }
-
-      .ampstart-nav-dropdown .ampstart-dropdown-item,.ampstart-nav-dropdown .ampstart-dropdown>section>header {
-        background-color: #fff;
-        color: #000
-      }
-
-      .ampstart-nav-dropdown .ampstart-dropdown-item {
-        color: #003f93
+        border: 0;
       }
 
       .ampstart-dropdown {
@@ -239,12 +144,6 @@
 
       .ampstart-dropdown.absolute>section,.ampstart-dropdown.absolute>section>header {
         height: 100%
-      }
-
-      .ampstart-dropdown>section>header {
-        background-color: #000;
-        border: 0;
-        color: #fff
       }
 
       .ampstart-dropdown>section>header:after {
@@ -261,14 +160,7 @@
       .ampstart-dropdown-items {
         z-index: 200;
         list-style: none;
-        margin: 0;
         padding: 0;
-      }
-
-      .ampstart-dropdown-item {
-        background-color: #000;
-        color: #003f93;
-        opacity: .9
       }
 
       .ampstart-image-fullpage-hero {
@@ -303,10 +195,9 @@
       main {
         max-width: 700px;
         margin: 0 auto;
-        display: block
       }
 
-      .main-heading {
+      .main-heading, .video-desc {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         padding-top: 1rem;
@@ -315,13 +206,6 @@
 
       .main-intro {
         margin-bottom: 2rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem
-      }
-
-      .video-desc {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem
       }
@@ -363,25 +247,21 @@
         justify-content: center
       }
 
+      input {
+        font-family: sans-serif;
+        font-size: 100%;
+      }
+
       .ampstart-input {
         max-width: 100%;
         width: 300px;
         min-width: 100px;
-        font-size: 1rem;
         line-height: 1.5rem;
         display: inline-block;
         position: relative;
         margin: 0;
         padding: 0;
         margin-bottom: 1.5rem;
-      }
-
-      .ampstart-input [disabled],.ampstart-input [disabled]+label {
-        opacity: .5
-      }
-
-      .ampstart-input [disabled]:focus {
-        outline: 0
       }
 
       .ampstart-input>input {
@@ -397,106 +277,9 @@
       }
 
       .ampstart-input>label {
-        color: #003f93;
-        pointer-events: none;
         text-align: left;
         font-size: .875rem;
         line-height: 1rem;
-        opacity: 0;
-        -webkit-animation: .2s;
-        animation: .2s;
-        -webkit-animation-timing-function: cubic-bezier(.4,0,.2,1);
-        animation-timing-function: cubic-bezier(.4,0,.2,1);
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards
-      }
-
-      .ampstart-input>input:focus {
-        outline: 0
-      }
-
-      .ampstart-input>input:focus::-webkit-input-placeholder,.ampstart-input>select:focus::-webkit-input-placeholder,.ampstart-input>textarea:focus::-webkit-input-placeholder {
-        color: transparent
-      }
-
-      .ampstart-input>input:focus::-moz-placeholder,.ampstart-input>select:focus::-moz-placeholder,.ampstart-input>textarea:focus::-moz-placeholder {
-        color: transparent
-      }
-
-      .ampstart-input>input:focus:-ms-input-placeholder,.ampstart-input>select:focus:-ms-input-placeholder,.ampstart-input>textarea:focus:-ms-input-placeholder {
-        color: transparent
-      }
-
-      .ampstart-input>input:focus::placeholder,.ampstart-input>select:focus::placeholder,.ampstart-input>textarea:focus::placeholder {
-        color: transparent
-      }
-
-      .ampstart-input>input:not(:placeholder-shown):not([disabled])+label,.ampstart-input>select:not(:placeholder-shown):not([disabled])+label,.ampstart-input>textarea:not(:placeholder-shown):not([disabled])+label {
-        opacity: 1
-      }
-
-      .ampstart-input>input:focus+label {
-        -webkit-animation-name: a;
-        animation-name: a
-      }
-
-      @-webkit-keyframes a {
-        to {
-          opacity: 1
-        }
-      }
-
-      @keyframes a {
-        to {
-          opacity: 1
-        }
-      }
-
-      .ampstart-input>label:after {
-        content: "";
-        height: 2px;
-        position: absolute;
-        bottom: 0;
-        left: 45%;
-        background: #003f93;
-        -webkit-transition: .2s;
-        transition: .2s;
-        -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
-        transition-timing-function: cubic-bezier(.4,0,.2,1);
-        visibility: hidden;
-        width: 10px
-      }
-
-      .ampstart-input>input:focus+label:after {
-        left: 0;
-        width: 100%;
-        visibility: visible
-      }
-
-      .ampstart-input>label,_:-ms-lang(x) {
-        opacity: 1
-      }
-
-      .ampstart-input>input:-ms-input-placeholder,_:-ms-lang(x) {
-        color: transparent
-      }
-
-      .ampstart-input>input::placeholder,_:-ms-lang(x) {
-        color: transparent
-      }
-
-      .ampstart-input>input::-ms-input-placeholder,_:-ms-lang(x) {
-        color: transparent
-      }
-
-      .text-input {
-        display: block;
-        border: 0;
-        padding: 0;
-        margin: 0;
-      }
-
-      .text-input-label {
         position: absolute;
         top: 0;
         right: 0;
@@ -574,9 +357,7 @@
     <amp-sidebar id="header-sidebar" class="ampstart-sidebar"
       layout="nodisplay"
       side="left">
-      <div class="sidebar-button">
-        <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger">✕</div>
-      </div>
+      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger">✕</div>
       <nav class="ampstart-nav">
         <ul class="ampstart-label">
           <li class="ampstart-nav-item">
@@ -672,7 +453,7 @@
         <div class="form-input-container">
           <div class="ampstart-input">
             <input type="text" id="form-name" class="text-input"
-              name="name" placeholder="Enter your Name" required>
+              name="name" required>
             <label for="form-name" class="text-input-label" aria-hidden="true">
               Enter your Name
             </label>
@@ -681,7 +462,7 @@
         <div class="form-input-container">
           <div class="ampstart-input">
             <input type="email" id="form-email" class="text-input"
-              name="email" placeholder="Enter your email" required>
+              name="email" required>
             <label for="form-email" class="text-input-label" aria-hidden="true">
               Enter your Email
             </label>
@@ -703,7 +484,7 @@
       </form>
 
       <div class="lightbox-button-container">
-        <button class="ampstart-btn" on="tap:button-lightbox">Try amp-lighbox!</button>
+        <button class="ampstart-btn" on="tap:button-lightbox">Try amp-lightbox!</button>
       </div>
 
       <amp-lightbox id="button-lightbox" layout="nodisplay">
