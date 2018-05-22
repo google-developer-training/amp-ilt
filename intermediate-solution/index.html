@@ -42,91 +42,91 @@
     <style amp-custom>
       body {
         font-family: sans-serif;
-        min-width: 315px;
         line-height: 1.5rem;
+        min-width: 315px;
       }
 
       .ampstart-headerbar {
-        background-color: #fff;
-        z-index: 999;
-        box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
-        position: fixed;
-        display: flex;
         align-items: center;
-        top: 0;
+        background-color: #fff;
+        box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+        display: flex;
         left: 0;
-        right: 0;
         padding-left: 1rem;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 999;
       }
 
       .ampstart-headerbar+:not(amp-sidebar),.ampstart-headerbar+amp-sidebar+* {
-        margin-top: 3.5rem
+        margin-top: 3.5rem;
       }
 
       h1,h2,h3,h4,h5,h6 {
+        font-weight: 400;
+        letter-spacing: .06rem;
         margin: 0;
         padding: 0;
-        font-weight: 400;
-        letter-spacing: .06rem
       }
 
       .h2,h2 {
         font-size: 2rem;
-        line-height: 2.5rem
+        line-height: 2.5rem;
       }
 
       .h3,h3 {
         font-size: 1.5rem;
-        line-height: 2rem
+        line-height: 2rem;
       }
 
       .ampstart-sidebar .ampstart-dropdown-item,.ampstart-sidebar .ampstart-dropdown header,.ampstart-sidebar .ampstart-nav-item {
-        margin: 0 0 2rem
+        margin: 0 0 2rem;
       }
 
       .ampstart-sidebar {
         background-color: #fff;
         min-width: 300px;
-        width: 300px;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        width: 300px;
       }
 
       .ampstart-navbar-trigger {
         cursor: pointer;
-        line-height: 3.5rem;
         font-size: 2rem;
-        padding-right: 1rem
+        line-height: 3.5rem;
+        padding-right: 1rem;
       }
 
       .ampstart-navbar-trigger:focus {
-        outline: none
+        outline: none;
       }
 
       @media (max-width:40rem) {
         .bg-title {
-          display: none
+          display: none;
         }
       }
 
       @media (min-width:40.06rem) {
         .sm-title {
-          display: none
+          display: none;
         }
       }
 
       .ampstart-nav a {
-        text-decoration: none;
         color:#000;
+        text-decoration: none;
       }
 
       .ampstart-label {
+        font-size: .875rem;
+        letter-spacing: .06rem;
+        line-height: 1.125rem;
         list-style: none;
         padding: 0;
-        font-size: .875rem;
-        line-height: 1.125rem;
-        letter-spacing: .06rem;
-        text-transform: uppercase
+        text-transform: uppercase;
       }
 
       .ampstart-nav-dropdown .ampstart-dropdown>section>header {
@@ -147,104 +147,104 @@
       }
 
       .ampstart-dropdown>section>header:after {
-        display: inline-block;
+        color: #003f93;
         content: "+";
+        display: inline-block;
         padding: 0 0 0 1.5rem;
-        color: #003f93
       }
 
       .ampstart-dropdown>[expanded]>header:after {
-        content: "–"
+        content: "–";
       }
 
       .ampstart-dropdown-items {
-        z-index: 200;
         list-style: none;
         padding: 0;
+        z-index: 200;
       }
 
       .ampstart-image-fullpage-hero {
         color: #fff;
+        margin-bottom: 2rem;
         margin: 0;
         position: relative;
-        margin-bottom: 2rem
       }
 
       .ampstart-image-fullpage-hero>amp-img {
-        max-height: calc(100vh - 3.5rem)
+        max-height: calc(100vh - 3.5rem);
       }
 
       .ampstart-image-fullpage-hero>amp-img img {
         -o-object-fit: cover;
-        object-fit: cover
+        object-fit: cover;
       }
 
       @media (min-width:52.06rem) {
         .ampstart-image-fullpage-hero>amp-img {
-          height: 60vh
+          height: 60vh;
         }
       }
 
       .hero-image-caption {
+        padding: .5rem;
         position: absolute;
-        top: 0;
         right: 0;
-        padding: .5rem
+        top: 0;
       }
 
       main {
-        max-width: 700px;
         margin: 0 auto;
+        max-width: 700px;
       }
 
       .main-heading, .video-desc {
+        margin-bottom: 1rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         padding-top: 1rem;
-        margin-bottom: 1rem;
       }
 
       .main-intro {
         margin-bottom: 2rem;
         padding-left: 1.5rem;
-        padding-right: 1.5rem
+        padding-right: 1.5rem;
       }
 
       .image-counter {
         padding-left: 1.5rem;
-        padding-right: 1.5rem
+        padding-right: 1.5rem;
       }
 
       .thumbnail-carousel {
-        margin-top: .5rem
+        margin-top: .5rem;
       }
 
       .social-bar {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
         -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
         justify-content: center;
+        margin-bottom: 1rem;
         margin-top: 1rem;
-        margin-bottom: 1rem
       }
 
       .main-form {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
         -ms-flex-direction: column;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
         flex-direction: column;
         padding: 1rem;
       }
 
       .form-input-container {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center
+        -webkit-box-pack: center;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        justify-content: center;
       }
 
       input {
@@ -253,82 +253,82 @@
       }
 
       .ampstart-input {
-        max-width: 100%;
-        width: 300px;
-        min-width: 100px;
-        line-height: 1.5rem;
         display: inline-block;
-        position: relative;
-        margin: 0;
-        padding: 0;
+        line-height: 1.5rem;
         margin-bottom: 1.5rem;
+        margin: 0;
+        max-width: 100%;
+        min-width: 100px;
+        padding: 0;
+        position: relative;
+        width: 300px;
       }
 
       .ampstart-input>input {
-        width: 100%;
-        margin-top: 1rem;
-        line-height: 1.5rem;
-        border: 0;
-        border-radius: 0;
-        border-bottom: 1px solid #4a4a4a;
         background: none;
+        border-bottom: 1px solid #4a4a4a;
+        border-radius: 0;
+        border: 0;
         color: #4a4a4a;
-        outline: 0
+        line-height: 1.5rem;
+        margin-top: 1rem;
+        outline: 0;
+        width: 100%;
       }
 
       .ampstart-input>label {
-        text-align: left;
+        bottom: 0;
         font-size: .875rem;
+        left: 0;
         line-height: 1rem;
         position: absolute;
-        top: 0;
         right: 0;
-        bottom: 0;
-        left: 0;
+        text-align: left;
+        top: 0;
       }
 
       .ampstart-btn {
+        background-color: #000;
+        border: 1px solid #fff;
+        color: #fff;
+        cursor: pointer;
         font-family: inherit;
-        font-weight: inherit;
         font-size: 1rem;
+        font-weight: inherit;
+        letter-spacing: .2em;
         line-height: 1.125rem;
         padding: .7em .8em;
         text-decoration: none;
+        text-transform: uppercase;
+        vertical-align: middle;
         white-space: nowrap;
         word-wrap: normal;
-        vertical-align: middle;
-        cursor: pointer;
-        background-color: #000;
-        color: #fff;
-        border: 1px solid #fff;
-        text-transform: uppercase;
-        letter-spacing: .2em
       }
 
       .lightbox-button-container {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
         -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
         justify-content: center;
+        margin-bottom: 1.5rem;
         margin-top: 1.5rem;
-        margin-bottom: 1.5rem
       }
 
       .form-submit-response {
+        margin-bottom: 1rem;
         margin-top: 1rem;
-        margin-bottom: 1rem
       }
 
       .lightbox {
-        background: rgba(0,0,0,0.8);
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        display: flex;
         align-items: center;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        height: 100%;
         justify-content: center;
+        position: absolute;
+        width: 100%;
       }
 
       .lightbox h1 {
@@ -376,15 +376,15 @@
             </amp-accordion>
           </li>
           <li class="ampstart-nav-item ampstart-nav-dropdown">
-              <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
-                <section>
-                  <header>Latest Models</header>
-                  <ul class="ampstart-dropdown-items">
-                      <li class="ampstart-dropdown-item"><a href="#">Ricotta Racer</a></li>
-                  </ul>
-                </section>
-              </amp-accordion>
-            </li>
+            <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
+              <section>
+                <header>Latest Models</header>
+                <ul class="ampstart-dropdown-items">
+                    <li class="ampstart-dropdown-item"><a href="#">Ricotta Racer</a></li>
+                </ul>
+              </section>
+            </amp-accordion>
+          </li>
           <li class="ampstart-nav-item">
             <a href="#">Contact</a>
           </li>
