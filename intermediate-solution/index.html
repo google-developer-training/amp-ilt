@@ -46,7 +46,7 @@
         min-width: 315px;
       }
 
-      .ampstart-headerbar {
+      .headerbar {
         align-items: center;
         background-color: #fff;
         box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
@@ -59,7 +59,7 @@
         z-index: 999;
       }
 
-      .ampstart-headerbar+:not(amp-sidebar),.ampstart-headerbar+amp-sidebar+* {
+      .headerbar+:not(amp-sidebar),.headerbar+amp-sidebar+* {
         margin-top: 3.5rem;
       }
 
@@ -80,11 +80,11 @@
         line-height: 2rem;
       }
 
-      .ampstart-sidebar .ampstart-dropdown-item,.ampstart-sidebar .ampstart-dropdown header,.ampstart-sidebar .ampstart-nav-item {
+      .sidebar .dropdown-item,.sidebar .dropdown header,.sidebar .nav-item {
         margin: 0 0 2rem;
       }
 
-      .ampstart-sidebar {
+      .sidebar {
         background-color: #fff;
         min-width: 300px;
         padding-left: 1.5rem;
@@ -92,14 +92,14 @@
         width: 300px;
       }
 
-      .ampstart-navbar-trigger {
+      .navbar-trigger {
         cursor: pointer;
         font-size: 2rem;
         line-height: 3.5rem;
         padding-right: 1rem;
       }
 
-      .ampstart-navbar-trigger:focus {
+      .navbar-trigger:focus {
         outline: none;
       }
 
@@ -115,12 +115,12 @@
         }
       }
 
-      .ampstart-nav a {
+      .nav a {
         color:#000;
         text-decoration: none;
       }
 
-      .ampstart-label {
+      .label {
         font-size: .875rem;
         letter-spacing: .06rem;
         line-height: 1.125rem;
@@ -129,58 +129,58 @@
         text-transform: uppercase;
       }
 
-      .ampstart-nav-dropdown .ampstart-dropdown>section>header {
+      .nav-dropdown .dropdown>section>header {
         background-color: #fff;
         border: 0;
       }
 
-      .ampstart-dropdown {
+      .dropdown {
         min-width: 200px
       }
 
-      .ampstart-dropdown.absolute {
+      .dropdown.absolute {
         z-index: 100
       }
 
-      .ampstart-dropdown.absolute>section,.ampstart-dropdown.absolute>section>header {
+      .dropdown.absolute>section,.dropdown.absolute>section>header {
         height: 100%
       }
 
-      .ampstart-dropdown>section>header:after {
+      .dropdown>section>header:after {
         color: #003f93;
         content: "+";
         display: inline-block;
         padding: 0 0 0 1.5rem;
       }
 
-      .ampstart-dropdown>[expanded]>header:after {
+      .dropdown>[expanded]>header:after {
         content: "–";
       }
 
-      .ampstart-dropdown-items {
+      .dropdown-items {
         list-style: none;
         padding: 0;
         z-index: 200;
       }
 
-      .ampstart-image-fullpage-hero {
+      .image-fullpage-hero {
         color: #fff;
         margin-bottom: 2rem;
         margin: 0;
         position: relative;
       }
 
-      .ampstart-image-fullpage-hero>amp-img {
+      .image-fullpage-hero>amp-img {
         max-height: calc(100vh - 3.5rem);
       }
 
-      .ampstart-image-fullpage-hero>amp-img img {
+      .image-fullpage-hero>amp-img img {
         -o-object-fit: cover;
         object-fit: cover;
       }
 
       @media (min-width:52.06rem) {
-        .ampstart-image-fullpage-hero>amp-img {
+        .image-fullpage-hero>amp-img {
           height: 60vh;
         }
       }
@@ -252,11 +252,11 @@
         font-size: 100%;
       }
 
-      .ampstart-input {
+      .input {
         display: inline-block;
         line-height: 1.5rem;
-        margin-bottom: 1.5rem;
         margin: 0;
+        margin-bottom: 1.5rem;
         max-width: 100%;
         min-width: 100px;
         padding: 0;
@@ -264,11 +264,11 @@
         width: 300px;
       }
 
-      .ampstart-input>input {
+      .input>input {
         background: none;
+        border: 0;
         border-bottom: 1px solid #4a4a4a;
         border-radius: 0;
-        border: 0;
         color: #4a4a4a;
         line-height: 1.5rem;
         margin-top: 1rem;
@@ -276,7 +276,7 @@
         width: 100%;
       }
 
-      .ampstart-input>label {
+      .input>label {
         bottom: 0;
         font-size: .875rem;
         left: 0;
@@ -287,7 +287,7 @@
         top: 0;
       }
 
-      .ampstart-btn {
+      .btn {
         background-color: #000;
         border: 1px solid #fff;
         color: #fff;
@@ -347,52 +347,52 @@
     </style>
   </head>
   <body>
-    <header class="ampstart-headerbar">
+    <header class="headerbar">
       <div role="button" on="tap:header-sidebar.toggle" tabindex="0"
-        class="ampstart-navbar-trigger">☰</div>
+        class="navbar-trigger">☰</div>
       <h2 class="bg-title">Chico's Cheese Bicycles</h2>
       <h3 class="sm-title">Chico's Cheese Bicycles</h3>
     </header>
 
-    <amp-sidebar id="header-sidebar" class="ampstart-sidebar"
+    <amp-sidebar id="header-sidebar" class="sidebar"
       layout="nodisplay"
       side="left">
-      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger">✕</div>
-      <nav class="ampstart-nav">
-        <ul class="ampstart-label">
-          <li class="ampstart-nav-item">
+      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">✕</div>
+      <nav class="nav">
+        <ul class="label">
+          <li class="nav-item">
             <a href="#">Our Story</a>
           </li>
-          <li class="ampstart-nav-item ampstart-nav-dropdown">
-            <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
+          <li class="nav-item nav-dropdown">
+            <amp-accordion layout="container" disable-session-states="" class="dropdown">
               <section>
                 <header>Our Bikes</header>
-                <ul class="ampstart-dropdown-items">
-                    <li class="ampstart-dropdown-item"><a href="#">Ricotta Racer</a></li>
-                    <li class="ampstart-dropdown-item"><a href="#">Cheddar Chaser</a></li>
-                    <li class="ampstart-dropdown-item"><a href="#">Parmesan Pacer</a></li>
+                <ul class="dropdown-items">
+                    <li class="dropdown-item"><a href="#">Ricotta Racer</a></li>
+                    <li class="dropdown-item"><a href="#">Cheddar Chaser</a></li>
+                    <li class="dropdown-item"><a href="#">Parmesan Pacer</a></li>
                 </ul>
               </section>
             </amp-accordion>
           </li>
-          <li class="ampstart-nav-item ampstart-nav-dropdown">
-            <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
+          <li class="nav-item nav-dropdown">
+            <amp-accordion layout="container" disable-session-states="" class="dropdown">
               <section>
                 <header>Latest Models</header>
-                <ul class="ampstart-dropdown-items">
-                    <li class="ampstart-dropdown-item"><a href="#">Ricotta Racer</a></li>
+                <ul class="dropdown-items">
+                    <li class="dropdown-item"><a href="#">Ricotta Racer</a></li>
                 </ul>
               </section>
             </amp-accordion>
           </li>
-          <li class="ampstart-nav-item">
+          <li class="nav-item">
             <a href="#">Contact</a>
           </li>
         </ul>
       </nav>
     </amp-sidebar>
 
-    <figure class="ampstart-image-fullpage-hero">
+    <figure class="image-fullpage-hero">
       <amp-img src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
       <figcaption class="hero-image-caption">
         <header>Our newest model: the Ricotta Racer</header>
@@ -451,7 +451,7 @@
         action-xhr="/submit-form"
         target="_top">
         <div class="form-input-container">
-          <div class="ampstart-input">
+          <div class="input">
             <input type="text" id="form-name" class="text-input"
               name="name" required>
             <label for="form-name" class="text-input-label" aria-hidden="true">
@@ -460,7 +460,7 @@
           </div>
         </div>
         <div class="form-input-container">
-          <div class="ampstart-input">
+          <div class="input">
             <input type="email" id="form-email" class="text-input"
               name="email" required>
             <label for="form-email" class="text-input-label" aria-hidden="true">
@@ -469,7 +469,7 @@
           </div>
         </div>
         <div class="form-input-container">
-          <input type="submit" value="Subscribe" class="ampstart-btn">
+          <input type="submit" value="Subscribe" class="btn">
         </div>
         <div submit-success>
           <template type="amp-mustache">
@@ -484,7 +484,7 @@
       </form>
 
       <div class="lightbox-button-container">
-        <button class="ampstart-btn" on="tap:button-lightbox">Try amp-lightbox!</button>
+        <button class="btn" on="tap:button-lightbox">Try amp-lightbox!</button>
       </div>
 
       <amp-lightbox id="button-lightbox" layout="nodisplay">
