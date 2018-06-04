@@ -35,9 +35,9 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
     <script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async></script>
+    <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
 
     <style amp-custom>
       body {
@@ -415,7 +415,7 @@
       <p class="video-desc">Mixer making the raw material for the new Parmesan Pacer!</p>
 
       <div class="image-counter">Image <span [text]="1*selectedSlide + 1">1</span> of 3</div>
-      <amp-carousel [slide]="selectedSlide" id="imageSlides" layout="responsive" on="slideChange:AMP.setState({selectedSlide:event.index})" width="412" height="309" type="slides" loop>
+      <amp-carousel lightbox [slide]="selectedSlide" id="imageSlides" layout="responsive" on="slideChange:AMP.setState({selectedSlide:event.index})" width="412" height="309" type="slides" loop>
         <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
         <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
         <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
@@ -482,19 +482,6 @@
           </template>
         </div>
       </form>
-
-      <div class="lightbox-button-container">
-        <button class="btn" on="tap:button-lightbox">Try amp-lightbox!</button>
-      </div>
-
-      <amp-lightbox id="button-lightbox" layout="nodisplay">
-        <div class="lightbox"
-          on="tap:button-lightbox.close"
-          role="button"
-          tabindex="0">
-          <h1>amp-lightbox!</h1>
-        </div>
-      </amp-lightbox>
     </main>
   </body>
 </html>
