@@ -63,7 +63,7 @@
         margin-top: 3.5rem;
       }
 
-      h1,h2,h3,h4,h5,h6 {
+      h1,h2,h3 {
         font-weight: 400;
         letter-spacing: .06rem;
         margin: 0;
@@ -129,7 +129,7 @@
         text-transform: uppercase;
       }
 
-      .nav-dropdown .dropdown>section>header {
+      .dropdown>section>header {
         background-color: #fff;
         border: 0;
       }
@@ -146,14 +146,14 @@
         height: 100%
       }
 
-      .dropdown>section>header:after {
+      .nav-dropdown .dropdown>section>header:after {
         color: #003f93;
         content: "+";
         display: inline-block;
         padding: 0 0 0 1.5rem;
       }
 
-      .dropdown>[expanded]>header:after {
+      .nav-dropdown .dropdown>[expanded]>header:after {
         content: "–";
       }
 
@@ -197,20 +197,47 @@
         max-width: 700px;
       }
 
-      .main-heading, .video-desc {
+      .video-desc {
         margin-bottom: 1rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+      }
+
+      #imageSlides {
+        margin-top: 2.3rem;
+      }
+
+      .main-section {
+        margin: 30px;
+      }
+
+      .main-section>header:after {
+        content: "";
+        position: absolute;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M6.967 13.932V0M0 6.966h13.932'/%3E%3C/svg%3E");
+        height: 14px;
+        width: 14px;
+        right: 0px;
+        top: 28px;
+        cursor: pointer
+      }
+
+      .main-section[expanded]>header:after {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M0 6.966h13.932'/%3E%3C/svg%3E")
+      }
+
+      .main-heading {
+        margin-bottom: 1rem;
         padding-top: 1rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: 400;
+        letter-spacing: .06rem;
+        outline: none;
       }
 
       .main-intro {
         margin-bottom: 2rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-
-      .image-counter {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
       }
@@ -305,34 +332,9 @@
         word-wrap: normal;
       }
 
-      .lightbox-button-container {
-        -ms-flex-pack: center;
-        -webkit-box-pack: center;
-        display: -ms-flexbox;
-        display: -webkit-box;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
       .form-submit-response {
         margin-bottom: 1rem;
         margin-top: 1rem;
-      }
-
-      .lightbox {
-        align-items: center;
-        background: rgba(0,0,0,0.8);
-        display: flex;
-        height: 100%;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-      }
-
-      .lightbox h1 {
-        color: white;
       }
 
       /* low opacity for non-selected thumbnails */
@@ -400,41 +402,89 @@
     </figure>
 
     <main>
-      <h2 class="main-heading">What we're about</h2>
-      <p class="main-intro">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
+      <amp-accordion class="dropdown">
+        <section class="main-section">
+          <header class="main-heading">What we're about</header>
+          <div>
+            <p class="main-intro">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
 
-      <amp-youtube
-        data-videoid="BlpMQ7fMCzA"
-        layout="responsive"
-        width="480"
-        height="270">
-        <div fallback>
-          <p>The video could not be loaded.</p>
-        </div>
-      </amp-youtube>
-      <p class="video-desc">Mixer making the raw material for the new Parmesan Pacer!</p>
+            <amp-youtube
+              data-videoid="BlpMQ7fMCzA"
+              layout="responsive"
+              width="480"
+              height="270">
+              <div fallback>
+                <p>The video could not be loaded.</p>
+              </div>
+            </amp-youtube>
+            <p class="video-desc">Mixer making the raw material for the new Parmesan Pacer!</p>
 
-      <div class="image-counter">Image <span [text]="1*selectedSlide + 1">1</span> of 3</div>
-      <amp-carousel lightbox [slide]="selectedSlide" id="imageSlides" layout="responsive" on="slideChange:AMP.setState({selectedSlide:event.index})" width="412" height="309" type="slides" loop>
-        <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
-        <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
-        <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
-      </amp-carousel>
-      <amp-selector [selected]="selectedSlide" on="select:AMP.setState({selectedSlide:event.targetOption})">
-        <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
-          <amp-img option=0 selected role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
-          <amp-img option=1 role="button" tabindex="1" src="images/thumbnails/cheese-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
-          <amp-img option=2 role="button" tabindex="1" src="images/thumbnails/mouse-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
-        </amp-carousel>
-      </amp-selector>
+            <amp-carousel lightbox [slide]="selectedSlide" id="imageSlides" layout="responsive" on="slideChange:AMP.setState({selectedSlide:event.index})" width="412" height="309" type="slides" loop>
+              <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
+              <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
+              <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
+            </amp-carousel>
+            <amp-selector [selected]="selectedSlide" on="select:AMP.setState({selectedSlide:event.targetOption})">
+              <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
+                <amp-img option=0 selected role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                <amp-img option=1 role="button" tabindex="1" src="images/thumbnails/cheese-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                <amp-img option=2 role="button" tabindex="1" src="images/thumbnails/mouse-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+              </amp-carousel>
+            </amp-selector>
+          </div>
+        </section>
 
-      <h2 class="main-heading">Chico's Cheese Bicycles says</h2>
-      <amp-twitter
-        width="486"
-        height="657"
-        layout="responsive"
-        data-tweetid="944269037327892481">
-      </amp-twitter>
+        <section class="main-section">
+          <header class="main-heading">Chico's Cheese Bicycles says</header>
+          <amp-twitter
+            width="486"
+            height="657"
+            layout="responsive"
+            data-tweetid="944269037327892481">
+          </amp-twitter>
+        </section>
+
+        <section class="main-section">
+          <header class="main-heading">Subscribe to our Newsletter</header>
+
+          <form method="post"
+            class="main-form"
+            action-xhr="/submit-form"
+            target="_top">
+            <div class="form-input-container">
+              <div class="input">
+                <input type="text" id="form-name" class="text-input"
+                  name="name" required>
+                <label for="form-name" class="text-input-label" aria-hidden="true">
+                  Enter your Name
+                </label>
+              </div>
+            </div>
+            <div class="form-input-container">
+              <div class="input">
+                <input type="email" id="form-email" class="text-input"
+                  name="email" required>
+                <label for="form-email" class="text-input-label" aria-hidden="true">
+                  Enter your Email
+                </label>
+              </div>
+            </div>
+            <div class="form-input-container">
+              <input type="submit" value="Subscribe" class="btn">
+            </div>
+            <div submit-success>
+              <template type="amp-mustache">
+                <p class="form-submit-response">Success! Thanks {{name}} for subscribing!</p>
+              </template>
+            </div>
+            <div submit-error>
+              <template type="amp-mustache">
+                <p class="form-submit-response">Uh-oh, there was an error!</p>
+              </template>
+            </div>
+          </form>
+        </section>
+      </amp-accordion>
 
       <div class="social-bar">
         <amp-social-share type="email"></amp-social-share>
@@ -443,45 +493,6 @@
         <amp-social-share type="gplus"></amp-social-share>
         <amp-social-share type="twitter"></amp-social-share>
       </div>
-
-      <h2 class="main-heading">Subscribe to our Newsletter</h2>
-
-      <form method="post"
-        class="main-form"
-        action-xhr="/submit-form"
-        target="_top">
-        <div class="form-input-container">
-          <div class="input">
-            <input type="text" id="form-name" class="text-input"
-              name="name" required>
-            <label for="form-name" class="text-input-label" aria-hidden="true">
-              Enter your Name
-            </label>
-          </div>
-        </div>
-        <div class="form-input-container">
-          <div class="input">
-            <input type="email" id="form-email" class="text-input"
-              name="email" required>
-            <label for="form-email" class="text-input-label" aria-hidden="true">
-              Enter your Email
-            </label>
-          </div>
-        </div>
-        <div class="form-input-container">
-          <input type="submit" value="Subscribe" class="btn">
-        </div>
-        <div submit-success>
-          <template type="amp-mustache">
-            <p class="form-submit-response">Success! Thanks {{name}} for subscribing!</p>
-          </template>
-        </div>
-        <div submit-error>
-          <template type="amp-mustache">
-            <p class="form-submit-response">Uh-oh, there was an error!</p>
-          </template>
-        </div>
-      </form>
     </main>
   </body>
 </html>
