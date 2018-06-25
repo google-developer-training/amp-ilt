@@ -63,21 +63,15 @@
         margin-top: 3.5rem;
       }
 
-      h1,h2,h3 {
+      h2 {
         font-weight: 400;
-        letter-spacing: .06rem;
         margin: 0;
         padding: 0;
       }
 
       .h2,h2 {
-        font-size: 2rem;
+        font-size: 1.4rem;
         line-height: 2.5rem;
-      }
-
-      .h3,h3 {
-        font-size: 1.5rem;
-        line-height: 2rem;
       }
 
       .sidebar .dropdown-item,.sidebar .dropdown header,.sidebar .nav-item {
@@ -85,7 +79,7 @@
       }
 
       .sidebar {
-        background-color: #fff;
+        background-color: rgb(255, 253, 243);
         min-width: 300px;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -96,23 +90,8 @@
         cursor: pointer;
         font-size: 2rem;
         line-height: 3.5rem;
-        padding-right: 1rem;
-      }
-
-      .navbar-trigger:focus {
         outline: none;
-      }
-
-      @media (max-width:40rem) {
-        .bg-title {
-          display: none;
-        }
-      }
-
-      @media (min-width:40.06rem) {
-        .sm-title {
-          display: none;
-        }
+        padding-right: 1rem;
       }
 
       .nav a {
@@ -130,8 +109,9 @@
       }
 
       .dropdown>section>header {
-        background-color: #fff;
+        background-color:rgba(0,0,0,0);
         border: 0;
+        outline: none;
       }
 
       .dropdown {
@@ -163,55 +143,30 @@
         z-index: 200;
       }
 
-      .image-fullpage-hero {
-        color: #fff;
-        margin-bottom: 2rem;
-        margin: 0;
-        position: relative;
-      }
-
-      .image-fullpage-hero>amp-img {
-        max-height: calc(100vh - 3.5rem);
-      }
-
-      .image-fullpage-hero>amp-img img {
-        -o-object-fit: cover;
-        object-fit: cover;
-      }
-
-      @media (min-width:52.06rem) {
-        .image-fullpage-hero>amp-img {
-          height: 60vh;
-        }
-      }
-
-      .hero-image-caption {
-        padding: .5rem;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-
       main {
         margin: 0 auto;
         max-width: 700px;
       }
 
-      .video-desc {
+      .main-content {
+        margin: 0 10px;
+      }
+
+      .accordion-section {
+        margin: 30px 0;
+      }
+
+      .main-heading {
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: .06rem;
+        line-height: 2.5rem;
         margin-bottom: 1rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        outline: none;
+        padding-top: 1rem;
       }
 
-      #imageSlides {
-        margin-top: 2.3rem;
-      }
-
-      .main-section {
-        margin: 30px;
-      }
-
-      .main-section>header:after {
+      .accordion-section>header:after {
         content: "";
         position: absolute;
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M6.967 13.932V0M0 6.966h13.932'/%3E%3C/svg%3E");
@@ -222,39 +177,50 @@
         cursor: pointer
       }
 
-      .main-section[expanded]>header:after {
+      .accordion-section[expanded]>header:after {
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M0 6.966h13.932'/%3E%3C/svg%3E")
       }
 
-      .main-heading {
-        margin-bottom: 1rem;
-        padding-top: 1rem;
-        font-size: 2rem;
-        line-height: 2.5rem;
-        font-weight: 400;
-        letter-spacing: .06rem;
-        outline: none;
+      .main-text {
+        margin-bottom: 2rem;
+        padding-right: 1.5rem;
       }
 
-      .main-intro {
-        margin-bottom: 2rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+      #imageSlides {
+        margin-top: 2.3rem;
+      }
+
+      .amp-carousel-slide>.i-amphtml-replaced-content {
+        object-fit: cover;
+      }
+
+      /* low opacity for non-selected thumbnails */
+      amp-selector amp-img[option] {
+        opacity: 0.4;
+      }
+
+      /* normal opacity for the selected thumbnail */
+      amp-selector amp-img[option][selected] {
+        opacity: 1;
       }
 
       .thumbnail-carousel {
         margin-top: .5rem;
       }
 
-      .social-bar {
-        -ms-flex-pack: center;
-        -webkit-box-pack: center;
-        display: -ms-flexbox;
-        display: -webkit-box;
+      .i-amphtml-scrollable-carousel-container {
         display: flex;
         justify-content: center;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
+      }
+
+      .subscribe-card-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .subscribe-card {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 320px;
       }
 
       .main-form {
@@ -337,14 +303,20 @@
         margin-top: 1rem;
       }
 
-      /* low opacity for non-selected thumbnails */
-      amp-selector amp-img[option] {
-        opacity: 0.4;
+      .social-bar {
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        margin-top: 3.5rem;
       }
 
-      /* normal opacity for the selected thumbnail */
-      amp-selector amp-img[option][selected] {
-        opacity: 1;
+      amp-social-share {
+        border-radius: 50%;
+        background-size: 70%;
       }
     </style>
   </head>
@@ -352,8 +324,7 @@
     <header class="headerbar">
       <div role="button" on="tap:header-sidebar.toggle" tabindex="0"
         class="navbar-trigger">☰</div>
-      <h2 class="bg-title">Chico's Cheese Bicycles</h2>
-      <h3 class="sm-title">Chico's Cheese Bicycles</h3>
+      <h2>Chico's Cheese Bicycles</h2>
     </header>
 
     <amp-sidebar id="header-sidebar" class="sidebar"
@@ -394,104 +365,104 @@
       </nav>
     </amp-sidebar>
 
-    <figure class="image-fullpage-hero">
-      <amp-img src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
-      <figcaption class="hero-image-caption">
-        <header>Our newest model: the Ricotta Racer</header>
-      </figcaption>
-    </figure>
-
     <main>
-      <amp-accordion class="dropdown">
-        <section class="main-section">
-          <header class="main-heading">What we're about</header>
-          <div>
-            <p class="main-intro">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
+      <div class="main-content">
+        <amp-img src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
 
-            <amp-youtube
-              data-videoid="BlpMQ7fMCzA"
-              layout="responsive"
-              width="480"
-              height="270">
-              <div fallback>
-                <p>The video could not be loaded.</p>
-              </div>
-            </amp-youtube>
-            <p class="video-desc">Mixer making the raw material for the new Parmesan Pacer!</p>
+        <amp-accordion class="dropdown">
+          <section class="accordion-section">
+            <header class="main-heading">What we're about</header>
+            <div>
+              <p class="main-text">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
 
-            <amp-carousel lightbox [slide]="selectedSlide" id="imageSlides" layout="responsive" on="slideChange:AMP.setState({selectedSlide:event.index})" width="412" height="309" type="slides" loop>
-              <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
-              <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
-              <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
-            </amp-carousel>
-            <amp-selector [selected]="selectedSlide" on="select:AMP.setState({selectedSlide:event.targetOption})">
-              <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
-                <amp-img option=0 selected role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
-                <amp-img option=1 role="button" tabindex="1" src="images/thumbnails/cheese-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
-                <amp-img option=2 role="button" tabindex="1" src="images/thumbnails/mouse-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+              <amp-youtube
+                data-videoid="BlpMQ7fMCzA"
+                layout="responsive"
+                width="480"
+                height="270">
+                <div fallback>
+                  <p>The video could not be loaded.</p>
+                </div>
+              </amp-youtube>
+              <p class="main-text">Mixer making the raw material for the new Parmesan Pacer!</p>
+
+              <amp-carousel lightbox [slide]="selectedSlide" id="imageSlides" layout="responsive" on="slideChange:AMP.setState({selectedSlide:event.index})" width="412" height="309" type="slides" loop>
+                <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
+                <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
+                <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
               </amp-carousel>
-            </amp-selector>
+              <amp-selector [selected]="selectedSlide" on="select:AMP.setState({selectedSlide:event.targetOption})">
+                <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
+                  <amp-img option=0 selected role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                  <amp-img option=1 role="button" tabindex="1" src="images/thumbnails/cheese-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                  <amp-img option=2 role="button" tabindex="1" src="images/thumbnails/mouse-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                </amp-carousel>
+              </amp-selector>
+            </div>
+          </section>
+
+          <section class="accordion-section">
+            <header class="main-heading">Chico's Cheese Bicycles says</header>
+            <amp-twitter
+              width="486"
+              height="657"
+              layout="responsive"
+              data-tweetid="944269037327892481">
+            </amp-twitter>
+          </section>
+
+          <section class="accordion-section">
+            <header class="main-heading">Subscribe to our Newsletter</header>
+            <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lorem at diam fermentum condimentum. Phasellus
+            ac dui sit amet sapien laoreet mollis. Praesent scelerisque, erat et tincidunt mattis, libero purus tincidunt turpis, at
+            condimentum ligula sem id ante.
+            </p>
+          </section>
+        </amp-accordion>
+
+        <div class="subscribe-card-container">
+          <div class="subscribe-card">
+            <form method="post" class="main-form" action-xhr="/submit-form" target="_top">
+              <div class="form-input-container">
+                <div class="input">
+                  <input type="text" id="form-name" class="text-input" name="name" required>
+                  <label for="form-name" class="text-input-label" aria-hidden="true">
+                    Enter your Name
+                  </label>
+                </div>
+              </div>
+              <div class="form-input-container">
+                <div class="input">
+                  <input type="email" id="form-email" class="text-input" name="email" required>
+                  <label for="form-email" class="text-input-label" aria-hidden="true">
+                    Enter your Email
+                  </label>
+                </div>
+              </div>
+              <div class="form-input-container">
+                <input type="submit" value="Subscribe" class="btn">
+              </div>
+              <div submit-success>
+                <template type="amp-mustache">
+                  <p class="form-submit-response">Success! Thanks {{name}} for subscribing!</p>
+                </template>
+              </div>
+              <div submit-error>
+                <template type="amp-mustache">
+                  <p class="form-submit-response">Uh-oh, there was an error!</p>
+                </template>
+              </div>
+            </form>
           </div>
-        </section>
+        </div>
 
-        <section class="main-section">
-          <header class="main-heading">Chico's Cheese Bicycles says</header>
-          <amp-twitter
-            width="486"
-            height="657"
-            layout="responsive"
-            data-tweetid="944269037327892481">
-          </amp-twitter>
-        </section>
-
-        <section class="main-section">
-          <header class="main-heading">Subscribe to our Newsletter</header>
-
-          <form method="post"
-            class="main-form"
-            action-xhr="/submit-form"
-            target="_top">
-            <div class="form-input-container">
-              <div class="input">
-                <input type="text" id="form-name" class="text-input"
-                  name="name" required>
-                <label for="form-name" class="text-input-label" aria-hidden="true">
-                  Enter your Name
-                </label>
-              </div>
-            </div>
-            <div class="form-input-container">
-              <div class="input">
-                <input type="email" id="form-email" class="text-input"
-                  name="email" required>
-                <label for="form-email" class="text-input-label" aria-hidden="true">
-                  Enter your Email
-                </label>
-              </div>
-            </div>
-            <div class="form-input-container">
-              <input type="submit" value="Subscribe" class="btn">
-            </div>
-            <div submit-success>
-              <template type="amp-mustache">
-                <p class="form-submit-response">Success! Thanks {{name}} for subscribing!</p>
-              </template>
-            </div>
-            <div submit-error>
-              <template type="amp-mustache">
-                <p class="form-submit-response">Uh-oh, there was an error!</p>
-              </template>
-            </div>
-          </form>
-        </section>
-      </amp-accordion>
-
-      <div class="social-bar">
-        <amp-social-share type="email"></amp-social-share>
-        <amp-social-share type="facebook"
-          data-param-app_id="533464587051336"></amp-social-share>
-        <amp-social-share type="gplus"></amp-social-share>
-        <amp-social-share type="twitter"></amp-social-share>
+        <div class="social-bar">
+          <amp-social-share type="email" width="44" height="44"></amp-social-share>
+          <amp-social-share type="facebook" width="44" height="44"
+            data-param-app_id="533464587051336"></amp-social-share>
+          <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
+          <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+        </div>
       </div>
     </main>
   </body>
