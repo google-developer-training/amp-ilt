@@ -37,6 +37,7 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
     <script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async></script>
+    <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
     <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
 
     <style amp-custom>
@@ -367,7 +368,8 @@
 
     <main>
       <div class="main-content">
-        <amp-img src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
+        <amp-image-lightbox id="ricotta-racer-lightbox" layout="nodisplay"></amp-image-lightbox>
+        <amp-img on="tap:ricotta-racer-lightbox" role="button" tabindex="0" src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
 
         <amp-accordion class="dropdown">
           <section class="accordion-section">
