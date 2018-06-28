@@ -152,12 +152,12 @@
         margin: 0 10px;
       }
 
-      .accordion-section {
-        margin: 30px 0;
+      .below-hero {
+        margin: 20px;
       }
 
-      amp-accordion {
-        margin: 20px;
+      .accordion-section {
+        margin: 30px 0;
       }
 
       .main-heading {
@@ -374,101 +374,103 @@
         <amp-image-lightbox id="ricotta-racer-lightbox" layout="nodisplay"></amp-image-lightbox>
         <amp-img on="tap:ricotta-racer-lightbox" role="button" tabindex="0" src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
 
-        <amp-accordion class="dropdown">
-          <section class="accordion-section">
-            <header class="main-heading">What we're about</header>
-            <div>
-              <p class="main-text">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
+        <div class="below-hero">
+          <amp-accordion class="dropdown">
+            <section class="accordion-section">
+              <header class="main-heading">What we're about</header>
+              <div>
+                <p class="main-text">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
 
-              <amp-youtube
-                data-videoid="BlpMQ7fMCzA"
-                layout="responsive"
-                width="480"
-                height="270">
-                <div fallback>
-                  <p>The video could not be loaded.</p>
-                </div>
-              </amp-youtube>
-              <p class="main-text">Mixer making the raw material for the new Parmesan Pacer!</p>
+                <amp-youtube
+                  data-videoid="BlpMQ7fMCzA"
+                  layout="responsive"
+                  width="480"
+                  height="270">
+                  <div fallback>
+                    <p>The video could not be loaded.</p>
+                  </div>
+                </amp-youtube>
+                <p class="main-text">Mixer making the raw material for the new Parmesan Pacer!</p>
 
-              <amp-carousel lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
-                <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
-                <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
-                <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
-              </amp-carousel>
-              <amp-selector>
-                <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
-                  <amp-img option=0 selected on="tap:imageSlides.goToSlide(index=0)" role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
-                  <amp-img option=1 on="tap:imageSlides.goToSlide(index=1)" role="button" tabindex="1" src="images/thumbnails/cheese-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
-                  <amp-img option=2 on="tap:imageSlides.goToSlide(index=2)" role="button" tabindex="1" src="images/thumbnails/mouse-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                <amp-carousel lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
+                  <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
+                  <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
+                  <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
                 </amp-carousel>
-              </amp-selector>
+                <amp-selector>
+                  <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
+                    <amp-img option=0 selected on="tap:imageSlides.goToSlide(index=0)" role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                    <amp-img option=1 on="tap:imageSlides.goToSlide(index=1)" role="button" tabindex="1" src="images/thumbnails/cheese-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                    <amp-img option=2 on="tap:imageSlides.goToSlide(index=2)" role="button" tabindex="1" src="images/thumbnails/mouse-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                  </amp-carousel>
+                </amp-selector>
+              </div>
+            </section>
+
+            <section class="accordion-section">
+              <header class="main-heading">Chico's Cheese Bicycles says</header>
+              <amp-twitter
+                width="486"
+                height="657"
+                layout="responsive"
+                data-tweetid="944269037327892481">
+              </amp-twitter>
+            </section>
+
+            <section class="accordion-section">
+              <header class="main-heading">A Note from our Founder</header>
+              <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lorem at diam fermentum condimentum. Phasellus
+              ac dui sit amet sapien laoreet mollis. Praesent scelerisque, erat et tincidunt mattis, libero purus tincidunt turpis, at
+              condimentum ligula sem id ante.
+              </p>
+            </section>
+          </amp-accordion>
+
+          <header class="main-heading">Subscribe to our Newsletter</header>
+
+          <div class="subscribe-card-container">
+            <div class="subscribe-card">
+              <form method="post" class="main-form" action-xhr="/submit-form" target="_top">
+                <div class="form-input-container">
+                  <div class="input">
+                    <input type="text" id="form-name" class="text-input" name="name" required>
+                    <label for="form-name" class="text-input-label" aria-hidden="true">
+                      Enter your Name
+                    </label>
+                  </div>
+                </div>
+                <div class="form-input-container">
+                  <div class="input">
+                    <input type="email" id="form-email" class="text-input" name="email" required>
+                    <label for="form-email" class="text-input-label" aria-hidden="true">
+                      Enter your Email
+                    </label>
+                  </div>
+                </div>
+                <div class="form-input-container">
+                  <input type="submit" value="Subscribe" class="btn">
+                </div>
+                <div submit-success>
+                  <template type="amp-mustache">
+                    <p class="form-submit-response">Success! Thanks {{name}} for subscribing!</p>
+                  </template>
+                </div>
+                <div submit-error>
+                  <template type="amp-mustache">
+                    <p class="form-submit-response">Uh-oh, there was an error!</p>
+                  </template>
+                </div>
+              </form>
             </div>
-          </section>
-
-          <section class="accordion-section">
-            <header class="main-heading">Chico's Cheese Bicycles says</header>
-            <amp-twitter
-              width="486"
-              height="657"
-              layout="responsive"
-              data-tweetid="944269037327892481">
-            </amp-twitter>
-          </section>
-
-          <section class="accordion-section">
-            <header class="main-heading">A Note from our Founder</header>
-            <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla lorem at diam fermentum condimentum. Phasellus
-            ac dui sit amet sapien laoreet mollis. Praesent scelerisque, erat et tincidunt mattis, libero purus tincidunt turpis, at
-            condimentum ligula sem id ante.
-            </p>
-          </section>
-        </amp-accordion>
-
-        <header class="main-heading">Subscribe to our Newsletter</header>
-
-        <div class="subscribe-card-container">
-          <div class="subscribe-card">
-            <form method="post" class="main-form" action-xhr="/submit-form" target="_top">
-              <div class="form-input-container">
-                <div class="input">
-                  <input type="text" id="form-name" class="text-input" name="name" required>
-                  <label for="form-name" class="text-input-label" aria-hidden="true">
-                    Enter your Name
-                  </label>
-                </div>
-              </div>
-              <div class="form-input-container">
-                <div class="input">
-                  <input type="email" id="form-email" class="text-input" name="email" required>
-                  <label for="form-email" class="text-input-label" aria-hidden="true">
-                    Enter your Email
-                  </label>
-                </div>
-              </div>
-              <div class="form-input-container">
-                <input type="submit" value="Subscribe" class="btn">
-              </div>
-              <div submit-success>
-                <template type="amp-mustache">
-                  <p class="form-submit-response">Success! Thanks {{name}} for subscribing!</p>
-                </template>
-              </div>
-              <div submit-error>
-                <template type="amp-mustache">
-                  <p class="form-submit-response">Uh-oh, there was an error!</p>
-                </template>
-              </div>
-            </form>
           </div>
-        </div>
 
-        <div class="social-bar">
-          <amp-social-share type="email" width="44" height="44"></amp-social-share>
-          <amp-social-share type="facebook" width="44" height="44"
-            data-param-app_id="533464587051336"></amp-social-share>
-          <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
-          <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+          <div class="social-bar">
+            <amp-social-share type="email" width="44" height="44"></amp-social-share>
+            <amp-social-share type="facebook" width="44" height="44"
+              data-param-app_id="533464587051336"></amp-social-share>
+            <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
+            <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+          </div>
         </div>
       </div>
     </main>
