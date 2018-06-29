@@ -72,6 +72,10 @@ h2 {
   outline: none;
 }
 
+.dropdown section *:nth-child(2) {
+  padding: 0 10px;
+}      
+
 .dropdown {
   min-width: 200px
 }
