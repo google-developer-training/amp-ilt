@@ -114,6 +114,10 @@
         outline: none;
       }
 
+      .dropdown section *:nth-child(2) {
+        padding: 0 10px;
+      }
+
       .dropdown {
         min-width: 200px
       }
@@ -440,6 +444,57 @@
                     </label>
                   </div>
                 </div>
+<<<<<<< HEAD
+              </amp-youtube>
+              <p class="main-text">Mixer making the raw material for the new Parmesan Pacer!</p>
+
+              <amp-carousel lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
+                <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
+                <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
+                <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
+              </amp-carousel>
+              <amp-selector>
+                <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
+                  <amp-img option=0 selected on="tap:imageSlides.goToSlide(index=0)" role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                  <amp-img option=1 on="tap:imageSlides.goToSlide(index=1)" role="button" tabindex="1" src="images/thumbnails/cheese-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                  <amp-img option=2 on="tap:imageSlides.goToSlide(index=2)" role="button" tabindex="1" src="images/thumbnails/mouse-thumb.jpg" width="96" height="72" layout="fixed"></amp-img>
+                </amp-carousel>
+              </amp-selector>
+            </div>
+          </section>
+
+          <section class="accordion-section">
+            <header class="main-heading">Chico's Cheese Bicycles says</header>
+            <amp-twitter
+              width="486"
+              height="657"
+              layout="responsive"
+              data-tweetid="944269037327892481">
+            </amp-twitter>
+          </section>
+
+          <section class="accordion-section">
+            <header class="main-heading">A Note from our Founder</header>
+            <div>
+              <p class="main-text">My daily routine used to involve biking from my condo in Saskatchewan to the market in Maastricht, Holland, where I'd cool off by eating a wheel of fresh Gouda cheese. Sometimes, biking back over the Atlantic Ocean on the way back, I'd get hungry. I'd wish I'd saved some Gouda for the return trip.</p>
+              <p class="main-text">Then, it hit me. What if my very bicycle was made of cheese? Wouldn't that solve the problem? If I got hungry en route, I could eat something that wasn't essential. Like a handlebar.</p>
+              <p class="main-text">Now our cheese bikes are sold at quality bicycle stores - and supermarkets - worldwide!</p>
+            </div>
+          </section>
+        </amp-accordion>
+
+        <header class="main-heading">Subscribe to our Newsletter</header>
+
+        <div class="subscribe-card-container">
+          <div class="subscribe-card">
+            <form method="post" class="main-form" action-xhr="/submit-form" target="_top">
+              <div class="form-input-container">
+                <div class="input">
+                  <input type="text" id="form-name" class="text-input" name="name" required>
+                  <label for="form-name" class="text-input-label" aria-hidden="true">
+                    Enter your Name
+                  </label>
+=======
                 <div class="form-input-container">
                   <div class="input">
                     <input type="email" id="form-email" class="text-input" name="email" required>
@@ -447,6 +502,7 @@
                       Enter your Email
                     </label>
                   </div>
+>>>>>>> 44f6321a329e3fce37351fd1f79d8460bbcf38fa
                 </div>
                 <div class="form-input-container">
                   <input type="submit" value="Subscribe" class="btn">
