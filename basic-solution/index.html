@@ -17,11 +17,20 @@
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="canonical" href="/index.html">
     <title>Chico's Cheese Bicycles</title>
+    <link rel="canonical" href="/index.html">
     <link rel="shortcut icon" href="icons/cheese-favicon.png">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
     <style amp-custom>
       body {
         font-family: sans-serif;
@@ -46,21 +55,15 @@
         margin-top: 3.5rem;
       }
 
-      h1,h2,h3,h4,h5,h6 {
+      h2 {
         font-weight: 400;
-        letter-spacing: .06rem;
         margin: 0;
         padding: 0;
       }
 
       .h2,h2 {
-        font-size: 2rem;
+        font-size: 1.4rem;
         line-height: 2.5rem;
-      }
-
-      .h3,h3 {
-        font-size: 1.5rem;
-        line-height: 2rem;
       }
 
       .sidebar .dropdown-item,.sidebar .dropdown header,.sidebar .nav-item {
@@ -68,7 +71,7 @@
       }
 
       .sidebar {
-        background-color: #fff;
+        background-color: rgb(255, 253, 243);
         min-width: 300px;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -79,23 +82,8 @@
         cursor: pointer;
         font-size: 2rem;
         line-height: 3.5rem;
-        padding-right: 1rem;
-      }
-
-      .navbar-trigger:focus {
         outline: none;
-      }
-
-      @media (max-width:40rem) {
-        .bg-title {
-          display: none;
-        }
-      }
-
-      @media (min-width:40.06rem) {
-        .sm-title {
-          display: none;
-        }
+        padding-right: 1rem;
       }
 
       .nav a {
@@ -112,9 +100,14 @@
         text-transform: uppercase;
       }
 
-      .nav-dropdown .dropdown>section>header {
-        background-color: #fff;
+      .dropdown>section>header {
+        background-color:rgba(0,0,0,0);
         border: 0;
+        outline: none;
+      }
+
+      .dropdown section>*:nth-child(2) {
+        padding: 0 10px;
       }
 
       .dropdown {
@@ -129,50 +122,21 @@
         height: 100%
       }
 
-      .dropdown>section>header:after {
+      .nav-dropdown .dropdown>section>header:after {
         color: #003f93;
         content: "+";
         display: inline-block;
         padding: 0 0 0 1.5rem;
       }
 
-      .dropdown>[expanded]>header:after {
+      .nav-dropdown .dropdown>[expanded]>header:after {
         content: "–";
       }
 
       .dropdown-items {
         list-style: none;
-        padding: 0;
+        padding-left: 20px;
         z-index: 200;
-      }
-
-      .image-fullpage-hero {
-        color: #fff;
-        margin-bottom: 2rem;
-        margin: 0;
-        position: relative;
-      }
-
-      .image-fullpage-hero>amp-img {
-        max-height: calc(100vh - 3.5rem);
-      }
-
-      .image-fullpage-hero>amp-img img {
-        -o-object-fit: cover;
-        object-fit: cover;
-      }
-
-      @media (min-width:52.06rem) {
-        .image-fullpage-hero>amp-img {
-          height: 60vh;
-        }
-      }
-
-      .hero-image-caption {
-        padding: .5rem;
-        position: absolute;
-        right: 0;
-        top: 0;
       }
 
       main {
@@ -180,37 +144,74 @@
         max-width: 700px;
       }
 
-      .main-heading, .video-desc {
-        margin-bottom: 1rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+      .main-content {
+        margin: 0 10px;
+      }
+
+      .below-hero {
+        margin: 20px;
+      }
+
+      .accordion-section {
+        margin: 30px 0;
+      }
+
+      .main-heading {
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: .06rem;
+        line-height: 2.5rem;
+        margin-top: 2.7rem;
+        outline: none;
         padding-top: 1rem;
       }
 
-      .main-intro {
+      .accordion-section>header:after {
+        content: "";
+        position: absolute;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M6.967 13.932V0M0 6.966h13.932'/%3E%3C/svg%3E");
+        height: 14px;
+        width: 14px;
+        right: 0px;
+        top: 28px;
+        cursor: pointer
+      }
+
+      .accordion-section[expanded]>header:after {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M0 6.966h13.932'/%3E%3C/svg%3E")
+      }
+
+      .main-text {
         margin-bottom: 2rem;
-        padding-left: 1.5rem;
         padding-right: 1.5rem;
       }
 
-      .image-counter {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+      #imageSlides {
+        margin-top: 2.3rem;
+      }
+
+      .amp-carousel-slide>.i-amphtml-replaced-content {
+        object-fit: cover;
       }
 
       .thumbnail-carousel {
         margin-top: .5rem;
       }
 
-      .social-bar {
-        -ms-flex-pack: center;
-        -webkit-box-pack: center;
-        display: -ms-flexbox;
-        display: -webkit-box;
+      .i-amphtml-scrollable-carousel-container {
         display: flex;
         justify-content: center;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
+      }
+
+      .subscribe-card-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .subscribe-card {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 320px;
       }
 
       .main-form {
@@ -288,48 +289,33 @@
         word-wrap: normal;
       }
 
-      .lightbox-button-container {
+      .form-submit-response {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-bar {
         -ms-flex-pack: center;
         -webkit-box-pack: center;
         display: -ms-flexbox;
         display: -webkit-box;
         display: flex;
         justify-content: center;
-        margin-bottom: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      .form-submit-response {
         margin-bottom: 1rem;
-        margin-top: 1rem;
+        margin-top: 3.5rem;
       }
 
-      .lightbox {
-        align-items: center;
-        background: rgba(0,0,0,0.8);
-        display: flex;
-        height: 100%;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-      }
-
-      .lightbox h1 {
-        color: white;
+      amp-social-share {
+        border-radius: 50%;
+        background-size: 70%;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-    <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   </head>
   <body>
     <header class="headerbar">
       <div role="button" on="tap:header-sidebar.toggle" tabindex="0"
         class="navbar-trigger">☰</div>
-      <h2 class="bg-title">Chico's Cheese Bicycles</h2>
-      <h3 class="sm-title">Chico's Cheese Bicycles</h3>
+      <h2>Chico's Cheese Bicycles</h2>
     </header>
 
     <amp-sidebar id="header-sidebar" class="sidebar"
@@ -354,41 +340,40 @@
       </nav>
     </amp-sidebar>
 
-    <figure class="image-fullpage-hero">
-      <amp-img src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
-      <figcaption class="hero-image-caption">
-        <header>Our newest model: the Ricotta Racer</header>
-      </figcaption>
-    </figure>
-
     <main>
-      <h2 class="main-heading">What we're about</h2>
-      <p class="main-intro">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
+      <div class="main-content">
+        <amp-img src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
 
-      <amp-youtube
-        data-videoid="BlpMQ7fMCzA"
-        layout="responsive"
-        width="480"
-        height="270">
-        <div fallback>
-          <p>The video could not be loaded.</p>
+        <div class="below-hero">
+          <h2 class="main-heading">What we're about</h2>
+          <p class="main-text">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
+
+          <amp-youtube
+            data-videoid="BlpMQ7fMCzA"
+            layout="responsive"
+            width="480"
+            height="270">
+            <div fallback>
+              <p>The video could not be loaded.</p>
+            </div>
+          </amp-youtube>
+          <p class="main-text">Mixer making the raw material for the new Parmesan Pacer!</p>
+
+          <amp-carousel layout="responsive" width="412" height="309" type="slides" loop>
+            <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
+            <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
+            <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
+          </amp-carousel>
+
+          <h2 class="main-heading">Chico's Cheese Bicycles says</h2>
+          <amp-twitter
+            width="486"
+            height="657"
+            layout="responsive"
+            data-tweetid="944269037327892481">
+          </amp-twitter>
         </div>
-      </amp-youtube>
-      <p class="video-desc">Mixer making the raw material for the new Parmesan Pacer!</p>
-
-      <amp-carousel layout="responsive" width="412" height="309" type="slides" autoplay delay="2000" loop>
-        <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
-        <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
-        <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
-      </amp-carousel>
-
-      <h2 class="main-heading">Chico's Cheese Bicycles says</h2>
-      <amp-twitter
-        width="486"
-        height="657"
-        layout="responsive"
-        data-tweetid="944269037327892481">
-      </amp-twitter>
+      </div>
     </main>
   </body>
 </html>
