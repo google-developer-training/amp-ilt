@@ -160,16 +160,6 @@ main {
   object-fit: cover;
 }
 
-/* low opacity for non-selected thumbnails */
-amp-selector amp-img[option] {
-  opacity: 0.4;
-}
-
-/* normal opacity for the selected thumbnail */
-amp-selector amp-img[option][selected] {
-  opacity: 1;
-}
-
 .thumbnail-carousel {
   margin-top: .5rem;
 }
