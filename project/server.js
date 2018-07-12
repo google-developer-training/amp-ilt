@@ -17,10 +17,9 @@ app.use((req, res, next) => {
 
 app.post('/submit-form', upload.array(), (req, res) => {
   res.send(JSON.stringify(req.body));
-})
+});
 
 const server = app.listen(8081, () => {
-
   const host = server.address().address;
   const port = server.address().port;
 

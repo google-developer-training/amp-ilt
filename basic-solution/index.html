@@ -17,18 +17,16 @@
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Chico's Cheese Bicycles</title>
     <link rel="canonical" href="/index.html">
     <link rel="shortcut icon" href="icons/cheese-favicon.png">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
     <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 
     <style amp-custom>
@@ -86,7 +84,7 @@
         padding-right: 1rem;
       }
 
-      .nav a {
+      a {
         color:#000;
         text-decoration: none;
       }
@@ -104,10 +102,6 @@
         background-color:rgba(0,0,0,0);
         border: 0;
         outline: none;
-      }
-
-      .dropdown section>*:nth-child(2) {
-        padding: 0 10px;
       }
 
       .dropdown {
@@ -152,7 +146,7 @@
         margin: 20px;
       }
 
-      .accordion-section {
+      .below-hero>amp-accordion>section {
         margin: 30px 0;
       }
 
@@ -166,7 +160,7 @@
         padding-top: 1rem;
       }
 
-      .accordion-section>header:after {
+      .below-hero>amp-accordion>section>header:after {
         content: "";
         position: absolute;
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M6.967 13.932V0M0 6.966h13.932'/%3E%3C/svg%3E");
@@ -177,30 +171,20 @@
         cursor: pointer
       }
 
-      .accordion-section[expanded]>header:after {
+      .below-hero>amp-accordion>section[expanded]>header:after {
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M0 6.966h13.932'/%3E%3C/svg%3E")
       }
 
       .main-text {
         margin-bottom: 2rem;
-        padding-right: 1.5rem;
-      }
-
-      #imageSlides {
-        margin-top: 2.3rem;
-      }
-
-      .amp-carousel-slide>.i-amphtml-replaced-content {
-        object-fit: cover;
       }
 
       .thumbnail-carousel {
         margin-top: .5rem;
       }
 
-      .i-amphtml-scrollable-carousel-container {
-        display: flex;
-        justify-content: center;
+      amp-youtube {
+        margin-top: 40px;
       }
 
       .subscribe-card-container {
@@ -211,7 +195,7 @@
 
       .subscribe-card {
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        width: 320px;
+        width: 300px;
       }
 
       .main-form {
@@ -219,6 +203,7 @@
         -webkit-box-direction: normal;
         -webkit-box-orient: vertical;
         flex-direction: column;
+        margin-top: 10px;
         padding: 1rem;
       }
 
@@ -237,15 +222,11 @@
       }
 
       .input {
-        display: inline-block;
-        line-height: 1.5rem;
-        margin: 0;
+        left: calc(50% - (230px / 2));
         margin-bottom: 1.5rem;
         max-width: 100%;
-        min-width: 100px;
-        padding: 0;
         position: relative;
-        width: 300px;
+        width: 230px;
       }
 
       .input>input {
@@ -279,13 +260,16 @@
         font-family: inherit;
         font-size: 1rem;
         font-weight: inherit;
+        left: calc(50% - (150px / 2));
         letter-spacing: .2em;
         line-height: 1.125rem;
         padding: .7em .8em;
+        position: relative;
         text-decoration: none;
         text-transform: uppercase;
         vertical-align: middle;
         white-space: nowrap;
+        width: 150px;
         word-wrap: normal;
       }
 
@@ -313,40 +297,43 @@
   </head>
   <body>
     <header class="headerbar">
-      <div role="button" on="tap:header-sidebar.toggle" tabindex="0"
-        class="navbar-trigger">☰</div>
+      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">☰</div>
       <h2>Chico's Cheese Bicycles</h2>
     </header>
 
-    <amp-sidebar id="header-sidebar" class="sidebar"
-      layout="nodisplay"
-      side="left">
+    <amp-sidebar id="header-sidebar" class="sidebar" layout="nodisplay" side="left">
       <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">✕</div>
-      <nav class="nav">
-        <ul class="label">
-          <li class="nav-item">
-            <a href="#">Our Story</a>
-          </li>
-          <li class="nav-item">
-            <a href="#">Our Bikes</a>
-          </li>
-          <li class="nav-item">
-            <a href="#">Latest Models</a>
-          </li>
-          <li class="nav-item">
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </nav>
+      <ul class="label">
+        <li class="nav-item">
+          <a href="#">Our Story</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">Our Bikes</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">Latest Models</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
     </amp-sidebar>
 
     <main>
       <div class="main-content">
         <amp-img src="images/ricotta-racer.jpg" layout="responsive" width="640" height="480"></amp-img>
-
         <div class="below-hero">
           <h2 class="main-heading">What we're about</h2>
-          <p class="main-text">We sell the only ten-speed bicycles in the world made entirely of cheese.  They get you where you need to go, and you never arrive hungry.  Our bikes are 100% biodegradable.  And with our new rodent-repelling varnish they last longer than ever!</p>
+          <p class="main-text">We sell the only ten-speed bicycles in the world
+            made entirely of cheese. They get you where you need to go, and you
+            never arrive hungry. Our bikes are 100% biodegradable. And with our
+            new rodent-repelling varnish they last longer than ever!</p>
+
+          <amp-carousel layout="responsive" width="412" height="309" type="slides" loop>
+            <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
+            <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
+            <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
+          </amp-carousel>
 
           <amp-youtube
             data-videoid="BlpMQ7fMCzA"
@@ -357,13 +344,6 @@
               <p>The video could not be loaded.</p>
             </div>
           </amp-youtube>
-          <p class="main-text">Mixer making the raw material for the new Parmesan Pacer!</p>
-
-          <amp-carousel layout="responsive" width="412" height="309" type="slides" loop>
-            <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
-            <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
-            <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
-          </amp-carousel>
 
           <h2 class="main-heading">Chico's Cheese Bicycles says</h2>
           <amp-twitter
