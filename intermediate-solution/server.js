@@ -21,7 +21,7 @@ app.post('/submit-form', upload.array(), (req, res) => {
   res.send(JSON.stringify(req.body));
 });
 
-const server = app.listen(8081, () => {
+const server = app.listen(8081, '127.0.0.1', () => {
   const host = server.address().address;
   const port = server.address().port;
 
