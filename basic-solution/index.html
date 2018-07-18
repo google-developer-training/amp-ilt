@@ -27,7 +27,7 @@
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
     <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
-    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 
     <style amp-custom>
       body {
@@ -297,27 +297,8 @@
   </head>
   <body>
     <header class="headerbar">
-      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">☰</div>
       <h2>Chico's Cheese Bicycles</h2>
     </header>
-
-    <amp-sidebar id="header-sidebar" class="sidebar" layout="nodisplay" side="left">
-      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">✕</div>
-      <ul class="label">
-        <li class="nav-item">
-          <a href="#">Our Story</a>
-        </li>
-        <li class="nav-item">
-          <a href="#">Our Bikes</a>
-        </li>
-        <li class="nav-item">
-          <a href="#">Latest Models</a>
-        </li>
-        <li class="nav-item">
-          <a href="#">Contact</a>
-        </li>
-      </ul>
-    </amp-sidebar>
 
     <main>
       <div class="main-content">
@@ -352,6 +333,13 @@
             layout="responsive"
             data-tweetid="944269037327892481">
           </amp-twitter>
+
+          <div class="social-bar">
+            <amp-social-share type="email" width="44" height="44"></amp-social-share>
+            <amp-social-share type="facebook" width="44" height="44" data-param-app_id="533464587051336"></amp-social-share>
+            <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
+            <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+          </div>
         </div>
       </div>
     </main>
