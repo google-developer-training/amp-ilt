@@ -373,12 +373,12 @@
             never arrive hungry. Our bikes are 100% biodegradable. And with our
             new rodent-repelling varnish they last longer than ever!</p>
 
-          <amp-carousel lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
+          <amp-carousel on="slideChange:ampSelector.toggle(index=event.index)" lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
             <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
             <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
             <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
           </amp-carousel>
-          <amp-selector>
+          <amp-selector id="ampSelector">
             <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
               <amp-img option=0 selected on="tap:imageSlides.goToSlide(index=0)" role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg"
                 width="96" height="72" layout="fixed"></amp-img>
