@@ -1,0 +1,413 @@
+<!--
+ Copyright 2018 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Chico's Cheese Bicycles</title>
+    <link rel="canonical" href="http://localhost:8081/pages/products.html">
+    <link rel="shortcut icon" href="icons/cheese-favicon.png">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+
+    <style amp-custom>
+      body {
+        font-family: sans-serif;
+        line-height: 1.5rem;
+        min-width: 315px;
+      }
+
+      .headerbar {
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+        display: flex;
+        left: 0;
+        padding-left: 1rem;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 999;
+      }
+
+      .headerbar+:not(amp-sidebar),.headerbar+amp-sidebar+* {
+        margin-top: 3.5rem;
+      }
+
+      h2 {
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+      }
+
+      .h2,h2 {
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+      }
+
+      .sidebar .dropdown-item,.sidebar .dropdown header,.sidebar .nav-item {
+        margin: 0 0 2rem;
+      }
+
+      .sidebar {
+        background-color: rgb(255, 253, 243);
+        min-width: 300px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: 300px;
+      }
+
+      .navbar-trigger {
+        cursor: pointer;
+        font-size: 2rem;
+        line-height: 3.5rem;
+        outline: none;
+        padding-right: 1rem;
+      }
+
+      a {
+        color:#000;
+        text-decoration: none;
+      }
+
+      .label {
+        font-size: .875rem;
+        letter-spacing: .06rem;
+        line-height: 1.125rem;
+        list-style: none;
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      .dropdown>section>header {
+        background-color:rgba(0,0,0,0);
+        border: 0;
+        outline: none;
+      }
+
+      .dropdown {
+        min-width: 200px
+      }
+
+      .dropdown.absolute {
+        z-index: 100
+      }
+
+      .dropdown.absolute>section,.dropdown.absolute>section>header {
+        height: 100%
+      }
+
+      .nav-dropdown .dropdown>section>header:after {
+        color: #003f93;
+        content: "+";
+        display: inline-block;
+        padding: 0 0 0 1.5rem;
+      }
+
+      .nav-dropdown .dropdown>[expanded]>header:after {
+        content: "–";
+      }
+
+      .dropdown-items {
+        list-style: none;
+        padding-left: 20px;
+        z-index: 200;
+      }
+
+      main {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+
+      .main-content {
+        margin: 0 10px;
+      }
+
+      .below-hero {
+        margin: 20px;
+      }
+
+      .below-hero>amp-accordion>section {
+        margin: 30px 0;
+      }
+
+      .main-heading {
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: .06rem;
+        line-height: 2.5rem;
+        margin-top: 2.7rem;
+        outline: none;
+        padding-top: 1rem;
+        margin: 15px;
+      }
+
+      .below-hero>amp-accordion>section>header:after {
+        content: "";
+        position: absolute;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M6.967 13.932V0M0 6.966h13.932'/%3E%3C/svg%3E");
+        height: 14px;
+        width: 14px;
+        right: 0px;
+        top: 28px;
+        cursor: pointer
+      }
+
+      .below-hero>amp-accordion>section[expanded]>header:after {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M0 6.966h13.932'/%3E%3C/svg%3E")
+      }
+
+      .main-text {
+        margin-bottom: 2rem;
+      }
+
+      /* low opacity for non-selected thumbnails */
+      amp-selector amp-img[option] {
+        opacity: 0.4;
+      }
+
+      /* normal opacity for the selected thumbnail */
+      amp-selector amp-img[option][selected] {
+        opacity: 1;
+      }
+
+      .thumbnail-carousel {
+        margin-top: .5rem;
+      }
+
+      amp-youtube {
+        margin-top: 40px;
+      }
+
+      .subscribe-card-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .subscribe-card {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        width: 300px;
+      }
+
+      .main-form {
+        -ms-flex-direction: column;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 1rem;
+      }
+
+      .form-input-container {
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        justify-content: center;
+      }
+
+      input {
+        font-family: sans-serif;
+        font-size: 100%;
+      }
+
+      .input {
+        left: calc(50% - (230px / 2));
+        margin-bottom: 1.5rem;
+        max-width: 100%;
+        position: relative;
+        width: 230px;
+      }
+
+      .input>input {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid #4a4a4a;
+        border-radius: 0;
+        color: #4a4a4a;
+        line-height: 1.5rem;
+        margin-top: 1rem;
+        outline: 0;
+        width: 100%;
+      }
+
+      .input>label {
+        bottom: 0;
+        left: 0;
+        line-height: 1rem;
+        position: absolute;
+        right: 0;
+        text-align: left;
+        top: 0;
+      }
+
+      .btn {
+        background-color: #000;
+        border: 1px solid #fff;
+        color: #fff;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: inherit;
+        left: calc(50% - (150px / 2));
+        letter-spacing: .2em;
+        line-height: 1.125rem;
+        padding: .7em .8em;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 150px;
+        word-wrap: normal;
+      }
+
+      .form-submit-response {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-bar {
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        margin-top: 3.5rem;
+      }
+
+      amp-social-share {
+        border-radius: 50%;
+        background-size: 70%;
+      }
+
+      .bike-card {
+        display: flex;
+        flex-direction: row;
+        height: 150px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        background: #fff;
+        margin: 15px;
+        min-width: 360px;
+        /* border-radius: 2px;
+        position: relative; */
+      }
+
+      .bike-card amp-img {
+        min-width: 200px;
+      }
+
+      .bike-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1rem;
+        padding: 20px;
+      }
+
+      @media (max-width:500px) {
+        .bike-card {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="headerbar">
+      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">☰</div>
+      <h2>Chico's Cheese Bicycles</h2>
+    </header>
+
+    <amp-sidebar id="header-sidebar" class="sidebar" layout="nodisplay" side="left">
+      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">✕</div>
+      <ul class="label">
+        <li class="nav-item">
+          <a href="#">Our Story</a>
+        </li>
+        <li class="nav-item nav-dropdown">
+          <amp-accordion layout="container" disable-session-states="" class="dropdown">
+            <section>
+              <header>Our Bikes</header>
+              <ul class="dropdown-items">
+                <li class="dropdown-item">
+                  <a href="#">Ricotta Racer</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#">Cheddar Chaser</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#">Parmesan Pacer</a>
+                </li>
+              </ul>
+            </section>
+          </amp-accordion>
+        </li>
+        <li class="nav-item nav-dropdown">
+          <amp-accordion layout="container" disable-session-states="" class="dropdown">
+            <section>
+              <header>Latest Models</header>
+              <ul class="dropdown-items">
+                <li class="dropdown-item">
+                  <a href="#">Ricotta Racer</a>
+                </li>
+              </ul>
+            </section>
+          </amp-accordion>
+        </li>
+        <li class="nav-item">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </amp-sidebar>
+
+    <main>
+      <div class="main-content">
+        <h2 class="main-heading">Our Bikes</h2>
+        <amp-list id="amp-list-bikes" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/products.json">
+          <template type="amp-mustache">
+            <div class="bike-card">
+              <amp-img width="200" height="150" alt="{{name}}" src="{{img}}"></amp-img>
+              <div class="bike-details">
+                <p class="name">{{name}}</p>
+                <p class="star">{{{stars}}}</p>
+                <p class="price">${{price}}</p>
+              </div>
+            </div>
+          </template>
+        </amp-list>
+
+        <div class="social-bar">
+          <amp-social-share type="email" width="44" height="44"></amp-social-share>
+          <amp-social-share type="facebook" width="44" height="44" data-param-app_id="533464587051336"></amp-social-share>
+          <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
+          <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
