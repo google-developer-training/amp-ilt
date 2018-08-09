@@ -1,0 +1,65 @@
+{
+  "cheddarChaser": [
+    {
+      "id": "cheddar-chaser",
+      "url": "/pages/cheddar-chaser.html",
+      "name": "Cheddar Chaser",
+      "img": "https://storage.googleapis.com/chicos-products/cheddar-chaser.jpg",
+      "stars": "★★★★★",
+      "price": 599,
+      "about": "All components are manufactured in house using only the finest cultures.",
+      "type": "road",
+      "cheese": "cheddar",
+      "height": "52cm",
+      "weight": "18lbs",
+      "wheels": "26in",
+      "tires": "700x28mm",
+      "brakes": "disc",
+      "gears": 22,
+      "cassette": "11-speed",
+      "derailleur": "11-speed"
+    }
+  ],
+  "ricottaRacer": [
+    {
+      "id": "ricotta-racer",
+      "url": "/pages/ricotta-racer.html",
+      "name": "Ricotta Racer",
+      "img": "https://storage.googleapis.com/chicos-products/ricotta-racer.jpg",
+      "stars": "★★★★★",
+      "price": 399,
+      "about": "All components are manufactured in house using only the finest cultures.",
+      "type": "touring",
+      "cheese": "ricotta",
+      "height": "52cm",
+      "weight": "19lbs",
+      "wheels": "26in",
+      "tires": "700x28mm",
+      "brakes": "disc",
+      "gears": 22,
+      "cassette": "11-speed",
+      "derailleur": "11-speed"
+    }
+  ],
+  "parmesanPacer": [
+    {
+      "id": "parmesan-pacer",
+      "url": "/pages/parmesan-pacer.html",
+      "name": "Parmesan Pacer",
+      "img": "https://storage.googleapis.com/chicos-products/parmesan-pacer.jpg",
+      "stars": "★★★★☆",
+      "price": 299,
+      "about": "All components are manufactured in house using only the finest cultures.",
+      "type": "cruiser",
+      "cheese": "parmesan",
+      "height": "50cm",
+      "weight": "24lbs",
+      "wheels": "26in",
+      "tires": "700x33mm",
+      "brakes": "rim",
+      "gears": 1,
+      "cassette": "N/A",
+      "derailleur": "N/A"
+    }
+  ]
+}

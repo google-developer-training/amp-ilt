@@ -19,17 +19,18 @@
     <meta charset="utf-8" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Chico's Cheese Bicycles</title>
-    <link rel="canonical" href="http://localhost:8081/pages/product-details.html">
+    <link rel="canonical" href="http://localhost:8081/pages/ricotta-racer.html">
     <link rel="shortcut icon" href="icons/cheese-favicon.png">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
+    <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
     <style amp-custom>
       body {
@@ -307,15 +308,12 @@
       }
 
       .bike-card {
-        display: flex;
-        flex-direction: row;
-        height: 150px;
+        display: grid;
+        grid-template-columns: min-content auto;
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         background: #fff;
         margin: 15px;
         min-width: 360px;
-        /* border-radius: 2px;
-        position: relative; */
       }
 
       .bike-card amp-img {
@@ -327,7 +325,7 @@
         flex-direction: column;
         justify-content: center;
         line-height: 1rem;
-        padding: 20px;
+        padding-left: 20px;
       }
 
       @media (max-width:500px) {
@@ -335,6 +333,22 @@
           display: flex;
           flex-direction: column;
         }
+      }
+
+      .specs {
+        display: grid;
+        grid-column: 1 / 3;
+        grid-template-columns: min-content auto;
+        grid-column-gap: 20px;
+        padding-top: 10px;
+      }
+
+      .name {
+        padding-top: 20px;
+      }
+
+      .bike-attribute {
+        /* justify-self: end; */
       }
     </style>
   </head>
@@ -388,16 +402,39 @@
 
     <main>
       <div class="main-content">
-        <h2 class="main-heading">Our Bikes</h2>
-        <amp-list id="amp-list-bikes" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/products.json">
+        <amp-list id="amp-list-bikes" items="ricottaRacer" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/ricotta-racer-2018.json" [src]=endpoint>
           <template type="amp-mustache">
-            <div class="bike-card">
-              <amp-img width="200" height="150" alt="{{name}}" src="{{img}}"></amp-img>
-              <div class="bike-details">
-                <p class="name">{{name}}</p>
-                <p class="star">{{{stars}}}</p>
-                <p class="price">${{price}}</p>
-              </div>
+            <amp-image-lightbox id="{{id}}-lightbox" layout="nodisplay"></amp-image-lightbox>
+            <amp-img on="tap:{{id}}-lightbox" role="button" tabindex="0" src="{{img}}" layout="responsive" width="640" height="480"></amp-img>
+
+            <h2 class="name">{{name}}</h2>
+            <p class="star">{{{stars}}}</p>
+            <p class="price">${{price}}</p>
+            <select on="change:AMP.setState({endpoint: 'https://storage.googleapis.com/chicos-products/ricotta-racer-' + event.value + '.json'})">
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+            </select>
+            <p class="about">{{about}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et ante eleifend, auctor eros at, congue nisl. Maecenas in mollis
+            dui. Morbi eu nisi quis eros malesuada venenatis. Aliquam eu dictum mauris. Maecenas commodo elementum tempor. In eget scelerisque
+            eros. Etiam in mauris quis lectus consequat accumsan consequat et diam. Suspendisse potenti. Proin rhoncus enim orci, in
+            ultricies sapien suscipit nec. Nullam consequat varius nisi ut blandit. Nulla facilisis faucibus aliquam. Nullam bibendum
+            libero non eleifend hendrerit. Etiam mattis, massa nec egestas bibendum, mauris massa blandit turpis, a suscipit risus sapien
+            pharetra eros.</p>
+
+
+            <h2>Technical Specifications</h2>
+            <div class="specs">
+              <div class="bike-attribute"><strong>type:</strong></div> <div>{{type}}</div>
+              <div class="bike-attribute"><strong>cheese:</strong></div> <div>{{cheese}}</div>
+              <div class="bike-attribute"><strong>height:</strong></div> <div>{{height}}</div>
+              <div class="bike-attribute"><strong>weight:</strong></div> <div>{{weight}}</div>
+              <div class="bike-attribute"><strong>wheels:</strong></div> <div>{{wheels}}</div>
+              <div class="bike-attribute"><strong>tires:</strong></div> <div>{{tires}}</div>
+              <div class="bike-attribute"><strong>brakes:</strong></div> <div>{{brakes}}</div>
+              <div class="bike-attribute"><strong>gears:</strong></div> <div>{{gears}}</div>
+              <div class="bike-attribute"><strong>cassette:</strong></div> <div>{{cassette}}</div>
+              <div class="bike-attribute"><strong>derailleur:</strong></div> <div>{{derailleur}}</div>
             </div>
           </template>
         </amp-list>

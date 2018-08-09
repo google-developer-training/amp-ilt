@@ -306,15 +306,12 @@
       }
 
       .bike-card {
-        display: flex;
-        flex-direction: row;
-        height: 150px;
+        display: grid;
+        grid-template-columns: min-content auto;
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         background: #fff;
         margin: 15px;
         min-width: 360px;
-        /* border-radius: 2px;
-        position: relative; */
       }
 
       .bike-card amp-img {
@@ -326,7 +323,7 @@
         flex-direction: column;
         justify-content: center;
         line-height: 1rem;
-        padding: 20px;
+        padding-left: 20px;
       }
 
       @media (max-width:500px) {
@@ -334,6 +331,10 @@
           display: flex;
           flex-direction: column;
         }
+      }
+
+      .bike-attribute {
+        justify-self: end;
       }
     </style>
   </head>
@@ -388,16 +389,16 @@
     <main>
       <div class="main-content">
         <h2 class="main-heading">Our Bikes</h2>
-        <amp-list id="amp-list-bikes" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/products.json">
+        <amp-list id="amp-list-bikes" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/bikes.json">
           <template type="amp-mustache">
-            <div class="bike-card">
+            <a href={{url}} class="bike-card">
               <amp-img width="200" height="150" alt="{{name}}" src="{{img}}"></amp-img>
               <div class="bike-details">
                 <p class="name">{{name}}</p>
                 <p class="star">{{{stars}}}</p>
                 <p class="price">${{price}}</p>
               </div>
-            </div>
+            </a>
           </template>
         </amp-list>
 
