@@ -350,6 +350,76 @@
       .bike-attribute {
         /* justify-self: end; */
       }
+
+      .star-rank {
+        width: 80px;
+        position: relative;
+        height: 30px;
+        margin-top: 20px;
+      }
+
+      .ms-star-bottom, .ms-star-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+
+      .ms-star-bottom::before {
+        display: inline-block;
+        color: #e8e8e8;
+        content: "★★★★★";
+      }
+
+      .ms-star-top::before {
+        color: #F44336;
+        display: inline-block;
+        content: "★★★★★";
+      }
+
+      [data-w="0.0"] {
+        width: 0
+      }
+
+      [data-w="0.5"] {
+        width: 10%
+      }
+
+      [data-w="1.0"] {
+        width: 20%
+      }
+
+      [data-w="1.5"] {
+        width: 30%
+      }
+
+      [data-w="2.0"] {
+        width: 40%
+      }
+
+      [data-w="2.5"] {
+        width: 50%
+      }
+
+      [data-w="3.0"] {
+        width: 60%
+      }
+
+      [data-w="3.5"] {
+        width: 70%
+      }
+
+      [data-w="4.0"] {
+        width: 80%
+      }
+
+      [data-w="4.5"] {
+        width: 90%
+      }
+
+      [data-w="5.0"] {
+        width: 100%
+      }
     </style>
   </head>
   <body>
@@ -401,27 +471,38 @@
     </amp-sidebar>
 
     <main>
-      <div class="main-content">
-        <amp-list id="amp-list-bikes" items="ricottaRacer" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/ricotta-racer-2018.json" [src]=endpoint>
+      <s class="main-content">
+
+        <amp-list items="ricottaRacer" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/ricotta-racer-2018.json" [src]=endpoint>
           <template type="amp-mustache">
             <amp-image-lightbox id="{{id}}-lightbox" layout="nodisplay"></amp-image-lightbox>
             <amp-img on="tap:{{id}}-lightbox" role="button" tabindex="0" src="{{img}}" layout="responsive" width="640" height="480"></amp-img>
 
             <h2 class="name">{{name}}</h2>
-            <p class="star">{{{stars}}}</p>
+          </template>
+        </amp-list>
+
+        <!-- TODO: fix responsiveness -->
+
+        <select on="change:AMP.setState({endpoint: 'https://storage.googleapis.com/chicos-products/ricotta-racer-' + event.value + '.json'})">
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+        </select>
+
+        <amp-list items="ricottaRacer" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/ricotta-racer-2018.json" [src]=endpoint>
+          <template type="amp-mustache">
+            <div class="star-rank">
+              <div class="ms-star-bottom"></div>
+              <div class="ms-star-top" data-w="{{stars}}"></div>
+            </div>
             <p class="price">${{price}}</p>
-            <select on="change:AMP.setState({endpoint: 'https://storage.googleapis.com/chicos-products/ricotta-racer-' + event.value + '.json'})">
-              <option value="2018">2018</option>
-              <option value="2017">2017</option>
-              <option value="2016">2016</option>
-            </select>
             <p class="about">{{about}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et ante eleifend, auctor eros at, congue nisl. Maecenas in mollis
             dui. Morbi eu nisi quis eros malesuada venenatis. Aliquam eu dictum mauris. Maecenas commodo elementum tempor. In eget scelerisque
             eros. Etiam in mauris quis lectus consequat accumsan consequat et diam. Suspendisse potenti. Proin rhoncus enim orci, in
             ultricies sapien suscipit nec. Nullam consequat varius nisi ut blandit. Nulla facilisis faucibus aliquam. Nullam bibendum
             libero non eleifend hendrerit. Etiam mattis, massa nec egestas bibendum, mauris massa blandit turpis, a suscipit risus sapien
             pharetra eros.</p>
-
 
             <h2>Technical Specifications</h2>
             <div class="specs">

@@ -6,7 +6,7 @@
       "name": "Cheddar Chaser",
       "img":
         "https://storage.googleapis.com/chicos-products/cheddar-chaser.jpg",
-      "stars": "★★★★★",
+      "stars": "5.0",
       "price": 599
     },
     {
@@ -14,7 +14,7 @@
       "url": "/pages/ricotta-racer.html",
       "name": "Ricotta Racer",
       "img": "https://storage.googleapis.com/chicos-products/ricotta-racer.jpg",
-      "stars": "★★★★★",
+      "stars": "5.0",
       "price": 399
     },
     {
@@ -23,7 +23,7 @@
       "name": "Parmesan Pacer",
       "img":
         "https://storage.googleapis.com/chicos-products/parmesan-pacer.jpg",
-      "stars": "★★★★☆",
+      "stars": "4.0",
       "price": 299
     }
   ]
