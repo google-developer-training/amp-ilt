@@ -37,6 +37,8 @@
     <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
     <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
 
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
     <style amp-custom>
       body {
         font-family: sans-serif;
@@ -330,13 +332,13 @@
               <header>Our Bikes</header>
               <ul class="dropdown-items">
                 <li class="dropdown-item">
-                  <a href="#">Ricotta Racer</a>
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="#">Cheddar Chaser</a>
+                  <a href="/pages/cheddar-chaser.html">Cheddar Chaser</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="#">Parmesan Pacer</a>
+                  <a href="/pages/parmesan-pacer.html">Parmesan Pacer</a>
                 </li>
               </ul>
             </section>
@@ -348,7 +350,7 @@
               <header>Latest Models</header>
               <ul class="dropdown-items">
                 <li class="dropdown-item">
-                  <a href="#">Ricotta Racer</a>
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
                 </li>
               </ul>
             </section>
@@ -372,18 +374,18 @@
             never arrive hungry. Our bikes are 100% biodegradable. And with our
             new rodent-repelling varnish they last longer than ever!</p>
 
-          <amp-carousel on="slideChange:ampSelector.toggle(index=event.index)" lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
+          <amp-carousel [slide]="selectedSlide" on="slideChange:AMP.setState({selectedSlide:event.index})" lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
             <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
             <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
             <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
           </amp-carousel>
-          <amp-selector id="ampSelector">
+          <amp-selector id="ampSelector" [selected]="selectedSlide" on="select:AMP.setState({selectedSlide:event.targetOption})">
             <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
-              <amp-img option=0 selected on="tap:imageSlides.goToSlide(index=0)" role="button" tabindex="1" src="images/thumbnails/cheddar-chaser-thumb.jpg"
+              <amp-img option=0 selected src="images/thumbnails/cheddar-chaser-thumb.jpg"
                 width="96" height="72" layout="fixed"></amp-img>
-              <amp-img option=1 on="tap:imageSlides.goToSlide(index=1)" role="button" tabindex="1" src="images/thumbnails/cheese-thumb.jpg"
+              <amp-img option=1 src="images/thumbnails/cheese-thumb.jpg"
                 width="96" height="72" layout="fixed"></amp-img>
-              <amp-img option=2 on="tap:imageSlides.goToSlide(index=2)" role="button" tabindex="1" src="images/thumbnails/mouse-thumb.jpg"
+              <amp-img option=2 src="images/thumbnails/mouse-thumb.jpg"
                 width="96" height="72" layout="fixed"></amp-img>
             </amp-carousel>
           </amp-selector>

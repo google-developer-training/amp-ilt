@@ -341,6 +341,18 @@
         grid-template-columns: min-content auto;
         grid-column-gap: 20px;
         padding-top: 10px;
+        margin-left: 20px;
+      }
+
+      .model-year {
+        display: flex;
+        flex-flow: row;
+        margin-left: 20px;
+        align-items: center;
+      }
+
+      .below-title {
+        margin-left: 20px;
       }
 
       .name {
@@ -363,6 +375,9 @@
         top: 0;
         left: 0;
         overflow: hidden;
+      }
+      .model-selector {
+        margin-left: 10px;
       }
 
       .ms-star-bottom::before {
@@ -440,13 +455,13 @@
               <header>Our Bikes</header>
               <ul class="dropdown-items">
                 <li class="dropdown-item">
-                  <a href="#">Ricotta Racer</a>
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="#">Cheddar Chaser</a>
+                  <a href="/pages/cheddar-chaser.html">Cheddar Chaser</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="#">Parmesan Pacer</a>
+                  <a href="/pages/parmesan-pacer.html">Parmesan Pacer</a>
                 </li>
               </ul>
             </section>
@@ -458,7 +473,7 @@
               <header>Latest Models</header>
               <ul class="dropdown-items">
                 <li class="dropdown-item">
-                  <a href="#">Ricotta Racer</a>
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
                 </li>
               </ul>
             </section>
@@ -471,9 +486,9 @@
     </amp-sidebar>
 
     <main>
-      <s class="main-content">
+      <div class="main-content">
 
-        <amp-list items="ricottaRacer" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/ricotta-racer-2018.json" [src]=endpoint>
+        <amp-list items="ricottaRacer" width="680" height="620" layout="responsive" src="https://storage.googleapis.com/chicos-products/ricotta-racer-2018.json" [src]=endpoint>
           <template type="amp-mustache">
             <amp-image-lightbox id="{{id}}-lightbox" layout="nodisplay"></amp-image-lightbox>
             <amp-img on="tap:{{id}}-lightbox" role="button" tabindex="0" src="{{img}}" layout="responsive" width="640" height="480"></amp-img>
@@ -484,25 +499,30 @@
 
         <!-- TODO: fix responsiveness -->
 
-        <select on="change:AMP.setState({endpoint: 'https://storage.googleapis.com/chicos-products/ricotta-racer-' + event.value + '.json'})">
-          <option value="2018">2018</option>
-          <option value="2017">2017</option>
-          <option value="2016">2016</option>
-        </select>
+        <div class="model-year">
+          <p>Model year:</p>
+          <select class="model-selector" on="change:AMP.setState({endpoint: 'https://storage.googleapis.com/chicos-products/ricotta-racer-' + event.value + '.json'})">
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+          </select>
+        </div>
 
         <amp-list items="ricottaRacer" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/ricotta-racer-2018.json" [src]=endpoint>
           <template type="amp-mustache">
-            <div class="star-rank">
-              <div class="ms-star-bottom"></div>
-              <div class="ms-star-top" data-w="{{stars}}"></div>
+            <div class="below-title">
+              <div class="star-rank">
+                <div class="ms-star-bottom"></div>
+                <div class="ms-star-top" data-w="{{stars}}"></div>
+              </div>
+              <p class="price">${{price}}</p>
+              <p class="about">{{about}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et ante eleifend, auctor eros at, congue nisl. Maecenas in mollis
+              dui. Morbi eu nisi quis eros malesuada venenatis. Aliquam eu dictum mauris. Maecenas commodo elementum tempor. In eget scelerisque
+              eros. Etiam in mauris quis lectus consequat accumsan consequat et diam. Suspendisse potenti. Proin rhoncus enim orci, in
+              ultricies sapien suscipit nec. Nullam consequat varius nisi ut blandit. Nulla facilisis faucibus aliquam. Nullam bibendum
+              libero non eleifend hendrerit. Etiam mattis, massa nec egestas bibendum, mauris massa blandit turpis, a suscipit risus sapien
+              pharetra eros.</p>
             </div>
-            <p class="price">${{price}}</p>
-            <p class="about">{{about}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et ante eleifend, auctor eros at, congue nisl. Maecenas in mollis
-            dui. Morbi eu nisi quis eros malesuada venenatis. Aliquam eu dictum mauris. Maecenas commodo elementum tempor. In eget scelerisque
-            eros. Etiam in mauris quis lectus consequat accumsan consequat et diam. Suspendisse potenti. Proin rhoncus enim orci, in
-            ultricies sapien suscipit nec. Nullam consequat varius nisi ut blandit. Nulla facilisis faucibus aliquam. Nullam bibendum
-            libero non eleifend hendrerit. Etiam mattis, massa nec egestas bibendum, mauris massa blandit turpis, a suscipit risus sapien
-            pharetra eros.</p>
 
             <h2>Technical Specifications</h2>
             <div class="specs">
