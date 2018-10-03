@@ -315,6 +315,12 @@
     </style>
   </head>
   <body>
+    <amp-state id="carousel">
+      <script type="application/json">
+        { "selectedSlide": 0 }
+      </script>
+    </amp-state>
+
     <header class="headerbar">
       <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">☰</div>
       <h2>Chico's Cheese Bicycles</h2>
@@ -374,12 +380,12 @@
             never arrive hungry. Our bikes are 100% biodegradable. And with our
             new rodent-repelling varnish they last longer than ever!</p>
 
-          <amp-carousel [slide]="selectedSlide" on="slideChange:AMP.setState({selectedSlide:event.index})" lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
+          <amp-carousel [slide]="carousel.selectedSlide" on="slideChange:AMP.setState({carousel: {'selectedSlide':event.index}})" lightbox id="imageSlides" layout="responsive" width="412" height="309" type="slides" loop>
             <amp-img src="images/cheddar-chaser.jpg" width="412" height="309" layout="responsive"></amp-img>
             <amp-img src="images/cheese.jpg" width="412" height="309" layout="responsive"></amp-img>
             <amp-img src="images/mouse.jpg" width="412" height="309" layout="responsive"></amp-img>
           </amp-carousel>
-          <amp-selector id="ampSelector" [selected]="selectedSlide" on="select:AMP.setState({selectedSlide:event.targetOption})">
+          <amp-selector id="ampSelector" [selected]="carousel.selectedSlide" on="select:AMP.setState({carousel: {'selectedSlide':event.targetOption}})">
             <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
               <amp-img option=0 selected src="images/thumbnails/cheddar-chaser-thumb.jpg"
                 width="96" height="72" layout="fixed"></amp-img>
