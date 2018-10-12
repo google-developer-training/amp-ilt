@@ -1,0 +1,393 @@
+<!--
+ Copyright 2018 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Chico's Cheese Bicycles</title>
+    <link rel="canonical" href="http://localhost:8081/pages/ricotta-racer.html">
+    <link rel="shortcut icon" href="icons/cheese-favicon.png">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+    <style amp-custom>
+      body {
+        font-family: sans-serif;
+        line-height: 1.5rem;
+        width: 100%;
+      }
+
+      .headerbar {
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+        display: flex;
+        left: 0;
+        padding-left: 1rem;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 999;
+      }
+
+      .headerbar+:not(amp-sidebar),.headerbar+amp-sidebar+* {
+        margin-top: 3.5rem;
+      }
+
+      h2 {
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+      }
+
+      .h2,h2 {
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+      }
+
+      .sidebar .dropdown-item,.sidebar .dropdown header,.sidebar .nav-item {
+        margin: 0 0 2rem;
+      }
+
+      .sidebar {
+        background-color: rgb(255, 253, 243);
+        min-width: 300px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: 300px;
+      }
+
+      .navbar-trigger {
+        cursor: pointer;
+        font-size: 2rem;
+        line-height: 3.5rem;
+        outline: none;
+        padding-right: 1rem;
+      }
+
+      a {
+        color:#000;
+        text-decoration: none;
+      }
+
+      .label {
+        font-size: .875rem;
+        letter-spacing: .06rem;
+        line-height: 1.125rem;
+        list-style: none;
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      .dropdown>section>header {
+        background-color:rgba(0,0,0,0);
+        border: 0;
+        outline: none;
+      }
+
+      .dropdown {
+        min-width: 200px
+      }
+
+      .dropdown.absolute {
+        z-index: 100
+      }
+
+      .dropdown.absolute>section,.dropdown.absolute>section>header {
+        height: 100%
+      }
+
+      .nav-dropdown .dropdown>section>header:after {
+        color: #003f93;
+        content: "+";
+        display: inline-block;
+        padding: 0 0 0 1.5rem;
+      }
+
+      .nav-dropdown .dropdown>[expanded]>header:after {
+        content: "–";
+      }
+
+      .dropdown-items {
+        list-style: none;
+        padding-left: 20px;
+        z-index: 200;
+      }
+
+      main {
+        margin: 0 auto;
+        max-width: 800px;
+      }
+
+      .main-content {
+        margin: 0 10px;
+      }
+
+      .main-heading {
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: .06rem;
+        line-height: 2.5rem;
+        margin-top: 2.7rem;
+        outline: none;
+        padding-top: 1rem;
+      }
+
+      .social-bar {
+        -ms-flex-pack: center;
+        -webkit-box-pack: center;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        margin-top: 3.5rem;
+      }
+
+      amp-social-share {
+        border-radius: 50%;
+        background-size: 70%;
+      }
+
+      .filter-sort-selectors {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+      }
+
+      .product-selector {
+        margin-left: 10px;
+      }
+
+      .sort-by {
+        margin-left: 30px;
+      }
+
+      .order-selector {
+        margin-left: 10px;
+      }
+
+      amp-list div[role="list"] {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+        grid-gap: 1em;
+      }
+
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #fff;
+        min-width: 245px;
+        max-width: 505px;
+        max-height: 478.75px;
+      }
+
+      .product-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1rem;
+      }
+
+      .product-name {
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .product-price {
+        font-weight: lighter;
+      }
+
+      .bike-attribute {
+        justify-self: end;
+      }
+
+      .star-rank {
+        width: 80px;
+        position: relative;
+        height: 10px;
+      }
+
+      .ms-star-bottom, .ms-star-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+
+      .ms-star-bottom::before {
+        display: inline-block;
+        color: #e8e8e8;
+        content: "★★★★★";
+      }
+
+      .ms-star-top::before {
+        color: #F44336;
+        display: inline-block;
+        content: "★★★★★";
+      }
+
+      [data-w="0.0"] {
+        width: 0
+      }
+
+      [data-w="0.5"] {
+        width: 10%
+      }
+
+      [data-w="1.0"] {
+        width: 20%
+      }
+
+      [data-w="1.5"] {
+        width: 30%
+      }
+
+      [data-w="2.0"] {
+        width: 40%
+      }
+
+      [data-w="2.5"] {
+        width: 50%
+      }
+
+      [data-w="3.0"] {
+        width: 60%
+      }
+
+      [data-w="3.5"] {
+        width: 70%
+      }
+
+      [data-w="4.0"] {
+        width: 80%
+      }
+
+      [data-w="4.5"] {
+        width: 90%
+      }
+
+      [data-w="5.0"] {
+        width: 100%
+      }
+    </style>
+  </head>
+  <body>
+    <amp-state id="products" src="https://storage.googleapis.com/chicos-products/products.json"></amp-state>
+    <amp-state id="filteredProducts" src="https://storage.googleapis.com/chicos-products/products.json"></amp-state>
+    <header class="headerbar">
+      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">☰</div>
+      <h2><a href="/index.html">Chico's Cheese Bicycles</a></h2>
+    </header>
+
+    <amp-sidebar id="header-sidebar" class="sidebar" layout="nodisplay" side="left">
+      <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">✕</div>
+      <ul class="label">
+        <li class="nav-item">
+          <a href="#">Our Story</a>
+        </li>
+        <li class="nav-item nav-dropdown">
+          <amp-accordion layout="container" disable-session-states="" class="dropdown">
+            <section>
+              <header>Our Bikes</header>
+              <ul class="dropdown-items">
+                <li class="dropdown-item">
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="/pages/cheddar-chaser.html">Cheddar Chaser</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="/pages/parmesan-pacer.html">Parmesan Pacer</a>
+                </li>
+              </ul>
+            </section>
+          </amp-accordion>
+        </li>
+        <li class="nav-item nav-dropdown">
+          <amp-accordion layout="container" disable-session-states="" class="dropdown">
+            <section>
+              <header>Latest Models</header>
+              <ul class="dropdown-items">
+                <li class="dropdown-item">
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
+                </li>
+              </ul>
+            </section>
+          </amp-accordion>
+        </li>
+        <li class="nav-item">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </amp-sidebar>
+
+    <main>
+      <div class="main-content">
+        <h2 class="main-heading">Our Products</h2>
+        <div class="filter-sort-selectors">
+          <p>Product Type:</p>
+          <select class="product-selector" on="change:AMP.setState({filteredProducts: products.items.filter(a => event.value == 'all' ? true : a.type == event.value)})">
+            <option value="all">All</option>
+            <option value="bicycle">Bikes</option>
+            <option value="helmet">Helmets</option>
+            <option value="gloves">Gloves</option>
+            <option value="basket">Baskets</option>
+            <option value="bottle">Water Bottles</option>
+          </select>
+          <p class="sort-by">Sort By:</p>
+          <select class="order-selector" on="change:AMP.setState({filteredProducts: products.items.sort((a, b) => event.value == 'asc' ? a.price - b.price : b.price - a.price)})">
+            <option value="desc">Price: High-Low</option>
+            <option value="asc">Price: Low-High</option>
+          </select>
+        </div>
+
+        <amp-list id="amp-list-bikes" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/products.json" [src]=filteredProducts>
+          <template type="amp-mustache">
+            <a href={{url}} class="product-card">
+              <amp-img width="200" height="150" layout="responsive" alt="{{name}}" src="{{img}}"></amp-img>
+              <div class="product-details">
+                <p class="product-name">{{name}}</p>
+                <div class="star-rank">
+                  <div class="ms-star-bottom"></div>
+                  <div class="ms-star-top" data-w="{{stars}}"></div>
+                </div>
+                <p class="product-price" data-price="{{price}}">${{price}}</p>
+              </div>
+            </a>
+          </template>
+        </amp-list>
+
+        <div class="social-bar">
+          <amp-social-share type="email" width="44" height="44"></amp-social-share>
+          <amp-social-share type="facebook" width="44" height="44" data-param-app_id="533464587051336"></amp-social-share>
+          <amp-social-share type="gplus" width="44" height="44"></amp-social-share>
+          <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

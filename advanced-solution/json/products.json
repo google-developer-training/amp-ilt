@@ -1,0 +1,103 @@
+{
+  "items": [
+    {
+      "id": "cheddar-chaser",
+      "type": "bicycle",
+      "url": "/pages/cheddar-chaser.html",
+      "name": "Cheddar Chaser",
+      "img": "https://storage.googleapis.com/chicos-products/cheddar-chaser.jpg",
+      "stars": "5.0",
+      "price": 599
+    },
+    {
+      "id": "ricotta-racer",
+      "type": "bicycle",
+      "url": "/pages/ricotta-racer.html",
+      "name": "Ricotta Racer",
+      "img": "https://storage.googleapis.com/chicos-products/ricotta-racer.jpg",
+      "stars": "5.0",
+      "price": 399
+    },
+    {
+      "id": "parmesan-pacer",
+      "type": "bicycle",
+      "url": "/pages/parmesan-pacer.html",
+      "name": "Parmesan Pacer",
+      "img": "https://storage.googleapis.com/chicos-products/parmesan-pacer.jpg",
+      "stars": "4.0",
+      "price": 299
+    },
+    {
+      "id": "halloumi-helmet",
+      "type": "helmet",
+      "url": "#",
+      "name": "Halloumi Helmet",
+      "img": "https://storage.googleapis.com/chicos-products/halloumi-helmet.jpg",
+      "stars": "4.5",
+      "price": 50
+    },
+    {
+      "id": "hafod-helmet",
+      "type": "helmet",
+      "url": "#",
+      "name": "Hafod Helmet",
+      "img": "https://storage.googleapis.com/chicos-products/hafod-helmet.jpg",
+      "stars": "4.0",
+      "price": 40
+    },
+    {
+      "id": "havarti-helmet",
+      "type": "helmet",
+      "url": "#",
+      "name": "Havarti Helmet",
+      "img": "https://storage.googleapis.com/chicos-products/havarti-helmet.jpg",
+      "stars": "4.5",
+      "price": 30
+    },
+    {
+      "id": "gruyere-gloves",
+      "type": "gloves",
+      "url": "#",
+      "name": "Gruyere Gloves",
+      "img": "https://storage.googleapis.com/chicos-products/gruyere-gloves.jpg",
+      "stars": "3.5",
+      "price": 30
+    },
+    {
+      "id": "barilotto-basket",
+      "type": "basket",
+      "url": "#",
+      "name": "Barilotto Basket",
+      "img": "https://storage.googleapis.com/chicos-products/barilotto-basket.jpg",
+      "stars": "4.5",
+      "price": 30
+    },
+    {
+      "id": "gouda-gloves",
+      "type": "gloves",
+      "url": "#",
+      "name": "Gouda Gloves",
+      "img": "https://storage.googleapis.com/chicos-products/gouda-gloves.jpg",
+      "stars": "5.0",
+      "price": 25
+    },
+    {
+      "id": "gloucester-gloves",
+      "type": "gloves",
+      "url": "#",
+      "name": "Gloucester Gloves",
+      "img": "https://storage.googleapis.com/chicos-products/gloucester-gloves.jpg",
+      "stars": "4.5",
+      "price": 20
+    },
+    {
+      "id": "baladi-bottle",
+      "type": "bottle",
+      "url": "#",
+      "name": "Baladi Bottle",
+      "img": "https://storage.googleapis.com/chicos-products/baladi-bottle.jpg",
+      "stars": "4.0",
+      "price": 15
+    }
+  ]
+}
