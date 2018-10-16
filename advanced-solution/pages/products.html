@@ -171,21 +171,13 @@
         background-size: 70%;
       }
 
-      .filter-sort-selectors {
+      .product-type {
         display: flex;
         flex-flow: row;
         align-items: center;
       }
 
       .product-selector {
-        margin-left: 10px;
-      }
-
-      .sort-by {
-        margin-left: 30px;
-      }
-
-      .order-selector {
         margin-left: 10px;
       }
 
@@ -348,7 +340,7 @@
     <main>
       <div class="main-content">
         <h2 class="main-heading">Our Products</h2>
-        <div class="filter-sort-selectors">
+        <div class="product-type">
           <p>Product Type:</p>
           <select class="product-selector" on="change:AMP.setState({filteredProducts: products.items.filter(a => event.value == 'all' ? true : a.type == event.value)})">
             <option value="all">All</option>
@@ -357,11 +349,6 @@
             <option value="gloves">Gloves</option>
             <option value="basket">Baskets</option>
             <option value="bottle">Water Bottles</option>
-          </select>
-          <p class="sort-by">Sort By:</p>
-          <select class="order-selector" on="change:AMP.setState({filteredProducts: products.items.sort((a, b) => event.value == 'asc' ? a.price - b.price : b.price - a.price)})">
-            <option value="desc">Price: High-Low</option>
-            <option value="asc">Price: Low-High</option>
           </select>
         </div>
 
