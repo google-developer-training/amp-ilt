@@ -15,24 +15,36 @@ limitations under the License.
 */
 const express = require('express');
 const multer = require('multer');
+const fs = require('fs');
 
 const upload = multer();
 const app = express();
-
-// This serves static files from the specified directory
-app.use(express.static(__dirname));
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
   res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.append('Access-Control-Allow-Headers', 'Content-Type');
-  res.append('AMP-Access-Control-Allow-Source-Origin', 'http://localhost:8081');
+  res.append('AMP-Access-Control-Allow-Source-Origin', 'https://seemly-metal.glitch.me');
   res.append('Access-Control-Expose-Headers', ['AMP-Access-Control-Allow-Source-Origin']);
-  res.append('Content-Type', 'application/json');
   next();
 });
 
+// This serves static files from the specified directory
+app.use(express.static(__dirname + '/public'));
+
+app.get('/products/filter', (req, res) => {
+  const filterType = req.query.filterType;
+  const sortValue = req.query.sortValue;
+  const products = fs.readFileSync(__dirname + '/public/json/products.json');
+  const productsJSON = JSON.parse(products);
+  const filteredItems = productsJSON.items.filter(item => filterType == 'all' ? true : item.type == filterType);
+  const sortedFilteredItems = filteredItems.sort((a, b) => sortValue == 'price-asc' ? a.price - b.price : b.price - a.price);
+  const filteredProducts = { "items": sortedFilteredItems }
+  res.send(JSON.stringify(filteredProducts));
+});
+
 app.post('/submit-form', upload.array(), (req, res) => {
+  res.append('Content-Type', 'application/json');
   res.send(JSON.stringify(req.body));
 });
 

@@ -19,22 +19,25 @@
     <meta charset="utf-8" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Chico's Cheese Bicycles</title>
-    <link rel="canonical" href="http://localhost:8081/pages/products.html">
+    <link rel="canonical" href="https://seemly-metal.glitch.me/products.html">
     <link rel="shortcut icon" href="icons/cheese-favicon.png">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
+    <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 
     <style amp-custom>
       body {
         font-family: sans-serif;
         line-height: 1.5rem;
-        min-width: 315px;
+        width: 100%;
       }
 
       .headerbar {
@@ -136,19 +139,11 @@
 
       main {
         margin: 0 auto;
-        max-width: 700px;
+        max-width: 800px;
       }
 
       .main-content {
         margin: 0 10px;
-      }
-
-      .below-hero {
-        margin: 20px;
-      }
-
-      .below-hero>amp-accordion>section {
-        margin: 30px 0;
       }
 
       .main-heading {
@@ -159,134 +154,6 @@
         margin-top: 2.7rem;
         outline: none;
         padding-top: 1rem;
-        margin: 15px;
-      }
-
-      .below-hero>amp-accordion>section>header:after {
-        content: "";
-        position: absolute;
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M6.967 13.932V0M0 6.966h13.932'/%3E%3C/svg%3E");
-        height: 14px;
-        width: 14px;
-        right: 0px;
-        top: 28px;
-        cursor: pointer
-      }
-
-      .below-hero>amp-accordion>section[expanded]>header:after {
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='%23021425' stroke-width='2' stroke-miterlimit='10' d='M0 6.966h13.932'/%3E%3C/svg%3E")
-      }
-
-      .main-text {
-        margin-bottom: 2rem;
-      }
-
-      /* low opacity for non-selected thumbnails */
-      amp-selector amp-img[option] {
-        opacity: 0.4;
-      }
-
-      /* normal opacity for the selected thumbnail */
-      amp-selector amp-img[option][selected] {
-        opacity: 1;
-      }
-
-      .thumbnail-carousel {
-        margin-top: .5rem;
-      }
-
-      amp-youtube {
-        margin-top: 40px;
-      }
-
-      .subscribe-card-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-
-      .subscribe-card {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        width: 300px;
-      }
-
-      .main-form {
-        -ms-flex-direction: column;
-        -webkit-box-direction: normal;
-        -webkit-box-orient: vertical;
-        flex-direction: column;
-        margin-top: 10px;
-        padding: 1rem;
-      }
-
-      .form-input-container {
-        -ms-flex-pack: center;
-        -webkit-box-pack: center;
-        display: -ms-flexbox;
-        display: -webkit-box;
-        display: flex;
-        justify-content: center;
-      }
-
-      input {
-        font-family: sans-serif;
-        font-size: 100%;
-      }
-
-      .input {
-        left: calc(50% - (230px / 2));
-        margin-bottom: 1.5rem;
-        max-width: 100%;
-        position: relative;
-        width: 230px;
-      }
-
-      .input>input {
-        background: none;
-        border: 0;
-        border-bottom: 1px solid #4a4a4a;
-        border-radius: 0;
-        color: #4a4a4a;
-        line-height: 1.5rem;
-        margin-top: 1rem;
-        outline: 0;
-        width: 100%;
-      }
-
-      .input>label {
-        bottom: 0;
-        left: 0;
-        line-height: 1rem;
-        position: absolute;
-        right: 0;
-        text-align: left;
-        top: 0;
-      }
-
-      .btn {
-        background-color: #000;
-        border: 1px solid #fff;
-        color: #fff;
-        cursor: pointer;
-        font-family: inherit;
-        font-size: 1rem;
-        font-weight: inherit;
-        left: calc(50% - (150px / 2));
-        letter-spacing: .2em;
-        line-height: 1.125rem;
-        padding: .7em .8em;
-        position: relative;
-        text-decoration: none;
-        text-transform: uppercase;
-        vertical-align: middle;
-        white-space: nowrap;
-        width: 150px;
-        word-wrap: normal;
-      }
-
-      .form-submit-response {
-        margin-bottom: 1rem;
-        margin-top: 1rem;
       }
 
       .social-bar {
@@ -305,43 +172,144 @@
         background-size: 70%;
       }
 
-      .bike-card {
+      .filter-sort-selectors {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+      }
+
+      .product-selector {
+        margin-left: 10px;
+      }
+
+      .sort-by {
+        margin-left: 30px;
+      }
+
+      .order-selector {
+        margin-left: 10px;
+      }
+
+      amp-list div[role="list"] {
         display: grid;
-        grid-template-columns: min-content auto;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+        grid-gap: 1em;
+      }
+
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: #fff;
-        margin: 15px;
-        min-width: 360px;
+        min-width: 245px;
+        max-width: 505px;
+        max-height: 478.75px;
       }
 
-      .bike-card amp-img {
-        min-width: 200px;
-      }
-
-      .bike-details {
+      .product-details {
         display: flex;
         flex-direction: column;
         justify-content: center;
         line-height: 1rem;
-        padding-left: 20px;
       }
 
-      @media (max-width:500px) {
-        .bike-card {
-          display: flex;
-          flex-direction: column;
-        }
+      .product-name {
+        height: 10px;
+        font-weight: bold;
+      }
+
+      .product-price {
+        font-weight: lighter;
       }
 
       .bike-attribute {
         justify-self: end;
       }
+
+      .star-rank {
+        width: 80px;
+        position: relative;
+        height: 10px;
+      }
+
+      .ms-star-bottom, .ms-star-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+
+      .ms-star-bottom::before {
+        display: inline-block;
+        color: #e8e8e8;
+        content: "★★★★★";
+      }
+
+      .ms-star-top::before {
+        color: #F44336;
+        display: inline-block;
+        content: "★★★★★";
+      }
+
+      [data-w="0.0"] {
+        width: 0
+      }
+
+      [data-w="0.5"] {
+        width: 10%
+      }
+
+      [data-w="1.0"] {
+        width: 20%
+      }
+
+      [data-w="1.5"] {
+        width: 30%
+      }
+
+      [data-w="2.0"] {
+        width: 40%
+      }
+
+      [data-w="2.5"] {
+        width: 50%
+      }
+
+      [data-w="3.0"] {
+        width: 60%
+      }
+
+      [data-w="3.5"] {
+        width: 70%
+      }
+
+      [data-w="4.0"] {
+        width: 80%
+      }
+
+      [data-w="4.5"] {
+        width: 90%
+      }
+
+      [data-w="5.0"] {
+        width: 100%
+      }
     </style>
   </head>
   <body>
+    <amp-state id="products">
+      <script type="application/json">
+        {
+          "sortValue": "price-desc",
+          "filterType": "all",
+          "listSrc": "/products/filter?sortValue=price-desc&filterType=all"
+        }
+      </script>
+    </amp-state>
+    <amp-state id="filteredProducts" src="/json/products.json"></amp-state>
     <header class="headerbar">
       <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">☰</div>
-      <h2>Chico's Cheese Bicycles</h2>
+      <h2><a href="/index.html">Chico's Cheese Bicycles</a></h2>
     </header>
 
     <amp-sidebar id="header-sidebar" class="sidebar" layout="nodisplay" side="left">
@@ -356,13 +324,13 @@
               <header>Our Bikes</header>
               <ul class="dropdown-items">
                 <li class="dropdown-item">
-                  <a href="#">Ricotta Racer</a>
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="#">Cheddar Chaser</a>
+                  <a href="/pages/cheddar-chaser.html">Cheddar Chaser</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="#">Parmesan Pacer</a>
+                  <a href="/pages/parmesan-pacer.html">Parmesan Pacer</a>
                 </li>
               </ul>
             </section>
@@ -374,7 +342,7 @@
               <header>Latest Models</header>
               <ul class="dropdown-items">
                 <li class="dropdown-item">
-                  <a href="#">Ricotta Racer</a>
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
                 </li>
               </ul>
             </section>
@@ -388,15 +356,43 @@
 
     <main>
       <div class="main-content">
-        <h2 class="main-heading">Our Bikes</h2>
-        <amp-list id="amp-list-bikes" width="auto" height="600" layout="fixed-height" src="https://storage.googleapis.com/chicos-products/bikes.json">
+        <h2 class="main-heading">Our Products</h2>
+        <div class="filter-sort-selectors">
+          <p>Product Type:</p>
+          <select class="product-selector" on="change:AMP.setState({
+            products: {
+              filterType: event.value,
+              listSrc: '/products/filter?sortValue=' + products.sortValue + '&filterType=' + event.value
+            }})">
+            <option value="all">All</option>
+            <option value="bicycle">Bikes</option>
+            <option value="helmet">Helmets</option>
+            <option value="gloves">Gloves</option>
+            <option value="basket">Baskets</option>
+            <option value="bottle">Water Bottles</option>
+          </select>
+          <p class="sort-by">Sort By:</p>
+          <select class="order-selector" on="change:AMP.setState({
+            products: {
+              sortValue: event.value,
+              listSrc: '/products/filter?sortValue=' + event.value + '&filterType=' + products.filterType
+            }})">
+            <option value="price-desc">Price: High-Low</option>
+            <option value="price-asc">Price: Low-High</option>
+          </select>
+        </div>
+
+        <amp-list id="amp-list-bikes" width="auto" height="600" layout="fixed-height" src="products/filter?sortValue=price-desc&filterType=all" [src]=products.listSrc>
           <template type="amp-mustache">
-            <a href={{url}} class="bike-card">
-              <amp-img width="200" height="150" alt="{{name}}" src="{{img}}"></amp-img>
-              <div class="bike-details">
-                <p class="name">{{name}}</p>
-                <p class="star">{{{stars}}}</p>
-                <p class="price">${{price}}</p>
+            <a href="{{url}}" class="product-card">
+              <amp-img width="200" height="150" layout="responsive" alt="{{name}}" src="{{img}}"></amp-img>
+              <div class="product-details">
+                <p class="product-name">{{name}}</p>
+                <div class="star-rank">
+                  <div class="ms-star-bottom"></div>
+                  <div class="ms-star-top" data-w="{{stars}}"></div>
+                </div>
+                <p class="product-price" data-price="{{price}}">${{price}}</p>
               </div>
             </a>
           </template>
