@@ -190,6 +190,21 @@
         margin-left: 10px;
       }
 
+      @media (max-width: 460px) {
+        .filter-sort-selectors {
+          display: flex;
+          flex-flow: column;
+          align-items: flex-start;
+        }
+        .sort-by {
+          margin-left: 0;
+        }
+        .order-selector {
+          margin-left: 10px;
+          margin-bottom: 16px;
+        }
+      }
+
       amp-list div[role="list"] {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
@@ -327,13 +342,13 @@
               <header>Our Bikes</header>
               <ul class="dropdown-items">
                 <li class="dropdown-item">
-                  <a href="#">Ricotta Racer</a>
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="#">Cheddar Chaser</a>
+                  <a href="/pages/cheddar-chaser.html">Cheddar Chaser</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="#">Parmesan Pacer</a>
+                  <a href="/pages/parmesan-pacer.html">Parmesan Pacer</a>
                 </li>
               </ul>
             </section>
@@ -345,7 +360,7 @@
               <header>Latest Models</header>
               <ul class="dropdown-items">
                 <li class="dropdown-item">
-                  <a href="#">Ricotta Racer</a>
+                  <a href="/pages/ricotta-racer.html">Ricotta Racer</a>
                 </li>
               </ul>
             </section>
