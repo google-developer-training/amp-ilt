@@ -35,11 +35,14 @@ app.use(express.static(__dirname + '/public'));
 app.get('/products/filter', (req, res) => {
   const filterType = req.query.filterType || 'all';
   const sortValue = req.query.sortValue || 'price-desc';
+
   const products = fs.readFileSync(__dirname + '/public/json/products.json');
   const productsJSON = JSON.parse(products);
+
   const filteredItems = productsJSON.items.filter(item => filterType == 'all' ? true : item.type == filterType);
   const sortedFilteredItems = filteredItems.sort((a, b) => sortValue == 'price-asc' ? a.price - b.price : b.price - a.price);
   const filteredProducts = { "items": sortedFilteredItems }
+
   res.send(JSON.stringify(filteredProducts));
 });
 
