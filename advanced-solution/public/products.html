@@ -190,6 +190,19 @@
         margin-left: 10px;
       }
 
+      .selector {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 30px;
+        width: 125px;
+        border-radius: 0;
+        padding-left: 10px;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+        background-repeat: no-repeat;
+        background-position: 100px center;
+      }
+
       @media (max-width: 460px) {
         .filter-sort-selectors {
           display: flex;
@@ -321,6 +334,7 @@
         }
       </script>
     </amp-state>
+
     <header class="headerbar">
       <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="navbar-trigger">☰</div>
       <h2><a href="/index.html">Chico's Cheese Bicycles</a></h2>
@@ -376,7 +390,7 @@
         <h2 class="main-heading">Our Products</h2>
         <div class="filter-sort-selectors">
           <p>Product Type:</p>
-          <select class="product-selector" on="change:AMP.setState({
+          <select class="product-selector selector" on="change:AMP.setState({
             products: {
               filterType: event.value,
               listSrc: '/products/filter?sortValue=' + products.sortValue + '&filterType=' + event.value
@@ -389,7 +403,7 @@
             <option value="bottle">Water Bottles</option>
           </select>
           <p class="sort-by">Sort By:</p>
-          <select class="order-selector" on="change:AMP.setState({
+          <select class="order-selector selector" on="change:AMP.setState({
             products: {
               sortValue: event.value,
               listSrc: '/products/filter?sortValue=' + event.value + '&filterType=' + products.filterType
